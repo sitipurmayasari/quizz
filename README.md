@@ -43,7 +43,7 @@ You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git clone https://github.com/vijaymgr/quiz.git
+    git clone https://github.com/sitipurmayasari/quizz.git
     cd quiz
     composer install
     cp .env.example .env
