@@ -59,8 +59,11 @@
     <div class="hero_btn-continer" style="text-align: right; float: right">
       <form class="form-horizontal validate-form" role="form" method="post" action="{{route('siswa.store')}}">
         {{ csrf_field() }}
-        <input type="hidden" id="status" name="status" value="{{$next->status}}">
-        <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next->materi_code}}">
+      
+        <input type="hidden" id="status" name="status" value="{{$next ? $next->status : 0}}">
+        <input type="hidden" id="materi_code" name="materi_code" value="{{Request('q')}}">
+        <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next ? $next->materi_code : 'perkalianbiasa'}}">
+
         <button type="submit" id="simpan" hidden class="call_to-btn btn_white-border">
           Selanjutnya b<img src="{{asset('front/images/right-arrow.png')}}" alt="">
         </button>
