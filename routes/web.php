@@ -44,6 +44,10 @@ Route::group([
     Route::resource('user', 'UserController');
     Route::resource('role', 'RoleController');
 
+    Route::get('progress', 'NilaiController@progress')->name('progress');
+    Route::get('nilai', 'NilaiController@index')->name('nilai');
+    Route::get('nilai/detail', 'NilaiController@detail')->name('nilai.detail');
+
     Route::get('quiz', 'QuizController@index')->name('quiz.index');
     Route::post('quiz', 'QuizController@store');
     Route::get('quiz/view/{slug}', 'QuizController@view')->name('quiz.view');

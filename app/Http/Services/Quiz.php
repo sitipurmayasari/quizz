@@ -5,9 +5,32 @@ namespace App\Http\Services;
 use App\Option;
 use Illuminate\Support\Facades\DB;
 use App\Quiz as Kuis;
+use App\Question;
+use App\UserQuestionAnswer as Answer;
+use App\OpenMateri;
 
 class Quiz 
 {
+    public function openMateri($userId)
+    {
+       return OpenMateri::where('user_id',$userId)->get();
+    }
+    public function openMateriDone($userId)
+    {
+       return OpenMateri::where('user_id',$userId)->where('status',1)->get();
+    }
+    public function getTotalSoal($quizId)
+    {
+        return Question::where('quiz_id',$quizId)->where('is_active',1)->count();
+    }
+    public function getJawabanBenar($email,$quizId)
+    {
+        $question = Question::select('id')->where('quiz_id',$quizId)->where('is_active',1)->get()->toArray();
+        return Answer::where('email',$email)
+                ->whereIn('question_id',$question)
+                ->where('is_right',1)
+                ->count();
+    }
     public function getMenuQuiz($type)
     {
         return Kuis::orderBy('id','asc')->where('type',$type)->where('STATUS','AKTIF')->get();

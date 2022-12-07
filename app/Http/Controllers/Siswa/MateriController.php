@@ -20,6 +20,8 @@ class MateriController extends Controller
                   'status' => 1
             ]);
 
+            $this->listing_materi();
+
            return view('frontend.siswa.pengertian');
 
         //penjumlahan biasa
@@ -565,7 +567,42 @@ class MateriController extends Controller
             return redirect()->route('siswa.materi',['q' =>$lanjut]);
         }
         
-       
+    }
 
+    public function listing_materi()
+    {
+       $list = array(
+         "pengertian",
+         "penjumlahanbiasa",
+         "penjumlahancampuran",
+         "penjumlahandesimal",
+         "penguranganbiasa",
+         "pengurangancampuran",
+         "pengurangandesimal",
+         "rangkuman_1",
+         "perkalianbiasa",
+         "perkaliancampuran",
+         "perkaliandesimal",
+         "pembagianbiasa",
+         "pembagiancampuran",
+         "pembagiandesimal",
+         "rangkuman_2"
+       );
+       foreach ($list as $data) {
+         $isDone = OpenMateri::where('user_id',auth()->user()->id)
+                     ->where('materi_code',$data)
+                     ->where('status',1)
+                     ->count();
+         if ($isDone==0) {
+            OpenMateri::updateOrCreate([
+               'user_id' => auth()->user()->id,
+               'materi_code' =>$data,
+            ],[
+                  'user_id' => auth()->user()->id,
+                  'materi_code' =>$data,
+                  'status' => 0
+            ]);
+         }
+       }
     }
 }

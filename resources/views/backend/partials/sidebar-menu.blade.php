@@ -27,6 +27,9 @@
                 {{-- @if( Auth::user()->can('manage_role'))
                     <li><a href="{{ route('role.index') }}"><i class="fa fa-edit"></i> Manage Role </a></li>
                 @endif --}}
+                <li><a href="{{ route('progress') }}"><i class="fa fa-circle-o-notch"></i> Progress Siswa </a></li>
+                <li><a href="{{ route('nilai') }}"><i class="fa fa-bar-chart"></i> Nilai Siswa </a></li>
+
                 
                 @if( Auth::user()->can('manage_user'))
                     <li><a><i class="fa fa-edit"></i> Kelola User <span class="fa fa-chevron-down"></span></a>
