@@ -132,10 +132,10 @@
                     <a class="nav-link" href="{{Route('siswa.home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="curicullum.html"> Kurikulum </a>
+                  <a class="nav-link" href="{{Route('curicullum')}}"> Kurikulum </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> Tentang Pengembang</a>
+                  <a class="nav-link" href="{{Route('about')}}"> Tentang Pengembang</a>
                 </li>
                 <li class="nav-item">
                   
