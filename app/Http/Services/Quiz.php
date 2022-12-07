@@ -17,7 +17,7 @@ class Quiz
     }
     public function openMateriDone($userId)
     {
-       return OpenMateri::where('user_id',$userId)->where('status',1)->get();
+       return OpenMateri::orderBy('id','desc')->where('user_id',$userId)->where('status',1)->get();
     }
     public function getTotalSoal($quizId)
     {

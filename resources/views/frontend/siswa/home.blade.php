@@ -1,3 +1,4 @@
+@inject('query', 'App\Http\Services\Quiz')
 @extends('layouts.siswa')
 @section('content')
 <div class="hero-container container">
@@ -32,25 +33,102 @@
       <div class="teacher_container layout_padding2">
         <div class="card-deck">
           <div class="card" style="text-align: center;">
-            <h1 style="color: blue;"><b>72</b></h1>
+            <h1 style="color: blue;"><b>
+              @php
+                  $totalSoalBab1 = $query->getTotalSoal(1);
+                  $jawabanBenarBab1 = $query->getJawabanBenar(auth()->user()->email,1);
+                  $jawabanSalahBab1 = $totalSoalBab1 - $jawabanBenarBab1;
+
+                  $totalNilaiBab1 = 100;
+                  if ($totalSoalBab1) {
+                     $nilaiPerSoalBab1 = $totalNilaiBab1 / $totalSoalBab1 ;
+                    $nilaiBab1 = $jawabanBenarBab1 * $nilaiPerSoalBab1;
+                    echo $nilaiBab1;
+                  }else{
+                    echo "0";
+                  }
+              @endphp
+            </b></h1>
             <div class="card-body">
               <h5 class="card-title">Penambahan dan Pengurangan Pecahan</h5>
 
             </div>
           </div>
           <div class="card"  style="text-align: center;">
-            <h1 style="color: red;"><b>64</b></h1>
+            <h1 style="color: red;"><b>
+              @php
+              $totalSoalBab2 = $query->getTotalSoal(2);
+              $jawabanBenarBab2 = $query->getJawabanBenar(auth()->user()->email,2);
+              $jawabanSalahBab2 = $totalSoalBab2 - $jawabanBenarBab2;
+
+              $totalNilaiBab2 = 100;
+              if ($totalSoalBab2) {
+                $nilaiPerSoalBab2 = $totalNilaiBab2 / $totalSoalBab2 ;
+                $nilaiBab2 = $jawabanBenarBab2 * $nilaiPerSoalBab2;
+                echo $nilaiBab2;
+              }else{
+                echo "0";
+              }
+             
+          @endphp
+          </b></h1>
             <div class="card-body">
               <h5 class="card-title">Perkalian dan Pembagian Pecahan</h5>
             </div>
 
           </div>
           <div class="card"  style="text-align: center;">
-            <h1 style="color: grey;"><b>0</b></h1>
+            <h1 style="color: grey;"><b>
+              @php
+              $totalSoalEvaluasi = $query->getTotalSoal(3);
+              $jawabanBenarEvaluasi = $query->getJawabanBenar(auth()->user()->email,3);
+              $jawabanSalahEvaluasi = $totalSoalEvaluasi - $jawabanBenarEvaluasi;
+
+              $totalNilaiEvaluasi = 100;
+              if ($totalSoalEvaluasi) {
+                $nilaiPerSoalEvaluasi = $totalNilaiEvaluasi / $totalSoalEvaluasi ;
+                $nilaiEvaluasi = $jawabanBenarEvaluasi * $nilaiPerSoalEvaluasi;
+                echo $nilaiEvaluasi;
+              }else{
+                echo "0";
+              }
+             
+          @endphp
+          </b></h1>
             <div class="card-body">
               <h5 class="card-title">Evaluasi Akhir</h5>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="main-heading ">
+        Progress Materi Kamu
+      </h2>
+      <div class="teacher_container">
+        <div class="card-deck">
+          <div class="card" style="text-align: center;">
+            <h1 style="color: blue;"><b>
+              @php
+                $progress = $query->openMateri(auth()->user()->id);
+                $progressDone = $query->openMateriDone(auth()->user()->id);
+                $persentase = 0.0;
+                $donePersen = 100;
+                if ($progress->count()>0) {
+                  $perSatuan = $donePersen / $progress->count();
+                  $persentase = $progressDone->count() * $perSatuan;
+                }
+            @endphp
+            {{number_format($persentase,2)}}%</b></h1>
+            <div class="card-body">
+              <h5 class="card-title">
+                {{$progressDone->first() ? $progressDone->first()->materi_code : '-'}}
+              </h5>
+
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
