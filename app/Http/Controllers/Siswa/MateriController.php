@@ -498,6 +498,11 @@ class MateriController extends Controller
 
             //Rangkuman 2
             else  if ($request->q=="rangkuman_2") {
+               $next = OpenMateri::orderBy('id','asc')
+                                ->where('materi_code','bab-1')
+                                ->where('user_id',auth()->user()->id)
+                                ->first();
+
                $isOpenNow = OpenMateri::where('user_id',auth()->user()->id)
                      ->where('materi_code',$request->q)
                      ->first();
@@ -541,7 +546,7 @@ class MateriController extends Controller
                 //      'user_id' => auth()->user()->id,
                 //      'materi_code' =>$request->q,
                 //  ]);
-                 return view('frontend.siswa.rangkuman_2');
+                 return view('frontend.siswa.rangkuman_2',compact('next'));
               }
           
         return view('frontend.siswa.pengertian');
@@ -580,13 +585,17 @@ class MateriController extends Controller
          "pengurangancampuran",
          "pengurangandesimal",
          "rangkuman_1",
+         "bab-1",
          "perkalianbiasa",
          "perkaliancampuran",
          "perkaliandesimal",
          "pembagianbiasa",
          "pembagiancampuran",
          "pembagiandesimal",
-         "rangkuman_2"
+         "rangkuman_2",
+         "bab-2",
+         "evaluasi-akhir"
+
        );
        foreach ($list as $data) {
          $isDone = OpenMateri::where('user_id',auth()->user()->id)

@@ -7,6 +7,7 @@ use App\Quiz;
 use App\QuizInvite;
 use App\Option;
 use App\Question;
+use App\OpenMateri;
 use App\UserQuestionAnswer;
 use Illuminate\Http\Request;
 use App\Http\Services\SaveQuizAnswer;
@@ -75,6 +76,14 @@ class QuizzController extends Controller
     {
         $email =auth()->user()->email;
         $quiz = $this->quiz->with('questions.options')->where('slug', $slug)->firstOrFail();
+
+        OpenMateri::updateOrCreate([
+            'user_id' => auth()->user()->id,
+            'materi_code' => $request->materi_code,
+        ],[
+            'materi_code' => $request->materi_code,
+            'status' => 1
+        ]);
 
         $isAnswerSaved = (new SaveQuizAnswer)->answer($email,$quiz->id, $request);
         if ($isAnswerSaved)

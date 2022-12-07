@@ -62,10 +62,10 @@
       
         <input type="hidden" id="status" name="status" value="{{$next ? $next->status : 0}}">
         <input type="hidden" id="materi_code" name="materi_code" value="{{Request('q')}}">
-        <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next ? $next->materi_code : 'perkalianbiasa'}}">
+        <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next ? $next->materi_code : 'bab-1'}}">
 
         <button type="submit" id="simpan" hidden class="call_to-btn btn_white-border">
-          Selanjutnya b<img src="{{asset('front/images/right-arrow.png')}}" alt="">
+          Selanjutnya<img src="{{asset('front/images/right-arrow.png')}}" alt="">
         </button>
       </form>
 

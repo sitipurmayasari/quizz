@@ -58,6 +58,7 @@
             <hr>
         @endforeach
         <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+            <input type="hidden" id="materi_code" name="materi_code" value="{{$quiz->slug}}">
             @if ($is_repeat)
                 <button class="btn btn-primary border-success align-items-center btn-success" type="submit">
                     KIRIM JAWABAN<i class="fa fa-angle-right ml-2"></i>
