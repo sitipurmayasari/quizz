@@ -14,20 +14,30 @@
       <div class="contact_section-container">
         <div class="row">
           <div class="col-md-6 mx-auto">
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            
             <div class="contact-form">
               <form method="POST" action="{{ route('register') }}">
                   @csrf
                 <div>
-                  <input type="text" placeholder="Nama" name="name">
+                  <input type="text" placeholder="Nama" name="name" required>
                 </div>
                 <div>
-                  <input type="email" placeholder="Email" name="email">
+                  <input type="email" placeholder="Email" name="email" required>
                 </div>
                 <div>
-                  <input type="text" placeholder="Password" name="password">
+                  <input type="text" placeholder="Password" name="password" required>
                 </div>
                 <div>
-                  <input type="text" placeholder="Asal Sekolah" name="sekolah">
+                  <input type="text" placeholder="Asal Sekolah" name="asal" required>
                 </div>
                 <div class="d-flex justify-content-center">
                   <button type="submit" class="btn_on-hover">
