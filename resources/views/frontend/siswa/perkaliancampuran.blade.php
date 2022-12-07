@@ -44,19 +44,75 @@
 </p>
 <table>
   <tr>
+    <td style="vertical-align: top; width: 30px;">1.</td>
     <td> 
-      <br>
-      2&nbsp;<span class="frac"><sup>3</sup><span>&frasl;</span><sub>4</sub></span>
+      1&nbsp;<span class="frac"><sup>1</sup><span>&frasl;</span><sub>2</sub></span>
       &nbsp;=&nbsp;
-      <span class="frac"><sup>
-        <input type="number" name="" id="a" style="width: 35px;" value="6" onkeyup="sum()" onclick="sum()">
-      </sup><span>&frasl;</span><sub>4</sub></span>
+      <span class="frac"><sup> 
+        <input type="number" name="a" id="a" style="width: 40px;" value="3" onkeyup="one()" onclick="one()">
+      </sup><span>&frasl;</span><sub>2</sub></span>
     </td>
     <td>
       <span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
       <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
       <input type="hidden" id="jawaban_benar" value="0">
     </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"> <br> 2.</td>
+    <td> 
+      <br>
+      2&nbsp;<span class="frac"><sup>3</sup><span>&frasl;</span><sub>4</sub></span>
+      &nbsp;=&nbsp;
+      <span class="frac"><sup>
+        <input type="number" name="b" id="b" style="width: 40px;" value="11" onkeyup="two()" onclick="two()">
+      </sup><span>&frasl;</span><sub>4</sub></span></td>
+      <td>
+        <span id="s2_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s2_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"> <br> 3.</td>
+    <td> 
+      <br>
+      2&nbsp;<span class="frac"><sup>1</sup><span>&frasl;</span><sub>2</sub></span>
+      &nbsp;=&nbsp;
+      <span class="frac"><sup>5</sup><span>&frasl;</span><sub>
+        <input type="number" name="c" id="c" style="width: 40px;" value="2" onkeyup="three()" onclick="three()">
+      </sub></span></td>
+      <td>
+        <span id="s3_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s3_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"> <br> 4.</td>
+    <td> 
+      <br>
+      3&nbsp;<span class="frac"><sup>2</sup><span>&frasl;</span><sub>3</sub></span>
+      &nbsp;=&nbsp;
+      <span class="frac"><sup>
+        <input type="number" name="d" id="d" style="width: 40px;" value="11" onkeyup="four()" onclick="four()">
+      </sup><span>&frasl;</span><sub>3</sub></span></td>
+      <td>
+        <span id="s4_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s4_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top;"> <br> 5.</td>
+    <td> 
+      <br>
+      4&nbsp;<span class="frac"><sup>4</sup><span>&frasl;</span><sub>5</sub></span>
+      &nbsp;=&nbsp;
+      <span class="frac"><sup>
+        <input type="number" name="e" id="e" style="width: 40px;" value="24" onkeyup="five()" onclick="five()">
+      </sup><span>&frasl;</span><sub>5</sub></span></td>
+      <td>
+        <span id="s5_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s5_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      </td>
   </tr>
 </table>
   <br><br><br>
@@ -97,19 +153,80 @@
       }
     } );
     
-   function sum() {
+    function one(){
       var a = $("#a").val();
-
-      if (a == 6 ) {
+      if (a == "3") {
         $("#s1_benar").removeAttr("hidden");
         $("#s1_salah").attr("hidden",true);
-        $("#jawaban_benar").val(1);
       } else {
         $("#s1_salah").removeAttr("hidden");
         $("#s1_benar").attr("hidden",true);
+      }
+      sum()
+    }
+
+    function two(){
+      var a = $("#b").val();
+      if (a == "11") {
+        $("#s2_benar").removeAttr("hidden");
+        $("#s2_salah").attr("hidden",true);
+      } else {
+        $("#s2_salah").removeAttr("hidden");
+        $("#s2_benar").attr("hidden",true);
+      }
+      sum()
+    }
+
+    function three(){
+      var a = $("#c").val();
+      if (a == "2") {
+        $("#s3_benar").removeAttr("hidden");
+        $("#s3_salah").attr("hidden",true);
+      } else {
+        $("#s3_salah").removeAttr("hidden");
+        $("#s3_benar").attr("hidden",true);
+      }
+      sum()
+    }
+
+    function four(){
+      var a = $("#d").val();
+      if (a == "11") {
+        $("#s4_benar").removeAttr("hidden");
+        $("#s4_salah").attr("hidden",true);
+      } else {
+        $("#s4_salah").removeAttr("hidden");
+        $("#s4_benar").attr("hidden",true);
+      }
+      sum()
+    }
+
+    function five(){
+      var a = $("#e").val();
+      if (a == "24") {
+        $("#s5_benar").removeAttr("hidden");
+        $("#s5_salah").attr("hidden",true);
+      } else {
+        $("#s5_salah").removeAttr("hidden");
+        $("#s5_benar").attr("hidden",true);
+      }
+      sum()
+    }
+
+   function sum() {
+      var a = $("#a").val();
+      var b = $("#b").val();
+      var c = $("#c").val();
+      var d = $("#d").val();
+      var e = $("#e").val();
+     
+      if (a == "3" && b == "11" && c == "2" && d == "11" && e == "24" ) {
+        $("#jawaban_benar").val(1);
+        lanjut()
+      } else {
         $("#jawaban_benar").val(0);
       }
-      lanjut()
+      
     }
 
     function lanjut(params) {
