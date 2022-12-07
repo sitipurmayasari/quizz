@@ -17,9 +17,20 @@
                          <h5>Harap Ulangi Jawaban Anda</h5>
 
                     @else 
-                    <button class="btn btn-primary border-success align-items-center btn-success" type="button">
-                       MATERI SELANJUTNYA<i class="fa fa-angle-right ml-2"></i>
-                    </button>
+                        @php
+                            if ($quiz->slug == 'bab-1') {
+                                $lanjut = Route('siswa.materi',['q' => 'pembagianbiasa']);
+                            } else {
+                                $lanjut = Route('siswa.quiz','evaluasi-akhir');
+                            }
+                            
+                        @endphp
+                        <a href="{{$lanjut}}" class="call_to-btn btn_white-border">
+                            <span>
+                            Selanjutnya
+                            </span>
+                            <img src="images/right-arrow.png" alt="">
+                        </a>
                     @endif
                 @endif
         </div>

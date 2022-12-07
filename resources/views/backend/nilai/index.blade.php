@@ -68,11 +68,11 @@
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->asal}}</td>
                                 <td>{{$row->type}}</td>
-                                <td align="center">{{$totalSoal}}</td>
-                                <td align="center">{{$jawabanBenar}}</td>
-                                <td align="center">{{$jawabanSalah}}</td>
-                                <td align="center"><strong>{{$nilaiYour}}</strong></td>
-                                <td align="center">
+                                <td style="text-align: center">{{$totalSoal}}</td>
+                                <td style="text-align: center">{{$jawabanBenar}}</td>
+                                <td style="text-align: center">{{$jawabanSalah}}</td>
+                                <td style="text-align: center"><strong>{{$nilaiYour}}</strong></td>
+                                <td style="text-align: center">
                                     @if ($isRepeat)
                                         <span class="badge badge-pill badge-danger">Mengulang</span>
                                     @else 
