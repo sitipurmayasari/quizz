@@ -50,19 +50,43 @@
   <div>
     <div class="hero_btn-continer" style="text-align: left; float: left">
       <a href="{{Route('siswa.materi',['q' => 'pengurangandesimal'])}}" class="call_to-btn btn_white-border">
-<img src="images/left-arrow.png" alt="">
-<span>
-  Sebelumnya
-</span>
+      <img src="images/left-arrow.png" alt="">
+      <span>
+        Sebelumnya
+      </span>
       </a>
     </div>
     <div class="hero_btn-continer" style="text-align: right; float: right">
-      <a href="{{Route('siswa.quiz','bab-1')}}" class="call_to-btn btn_white-border">
-<span>
-  Selanjutnya
-</span>
-<img src="images/right-arrow.png" alt="">
+      <form class="form-horizontal validate-form" role="form" method="post" action="{{route('siswa.store')}}">
+        {{ csrf_field() }}
+        <input type="hidden" id="status" name="status" value="{{$next->status}}">
+        <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next->materi_code}}">
+        <button type="submit" id="simpan" hidden class="call_to-btn btn_white-border">
+          Selanjutnya b<img src="{{asset('front/images/right-arrow.png')}}" alt="">
+        </button>
+      </form>
+
+      <a hidden id="lanjut" href="{{Route('siswa.quiz','bab-1')}}" class="call_to-btn btn_white-border">
+      <span>
+        Selanjutnya
+      </span>
+      <img src="images/right-arrow.png" alt="">
       </a>
     </div>
   </div>
+@endsection
+
+@section('script')
+<script>
+   $().ready( function () {
+    var status = $("#status").val();
+      if (status == 1) {
+        $("#lanjut").removeAttr("hidden");
+        $("#simpan").attr("hidden",true);
+      }else{
+        $("#simpan").removeAttr("hidden");
+        $("#lanjut").attr("hidden",true);
+      }
+    } );
+</script>
 @endsection

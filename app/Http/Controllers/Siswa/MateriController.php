@@ -12,20 +12,6 @@ class MateriController extends Controller
 
         //pengertian
         if ($request->q=="pengertian") {
-        //    $i = OpenMateri::where('user_id',auth()->user()->id)
-        //                 ->where('status',0)
-        //                 ->get()
-        //                 ->count();
-            // if ($i==0) {
-            //     OpenMateri::updateOrCreate([
-            //         'user_id' => auth()->user()->id,
-            //         'materi_code' =>'penjumlahanbiasa',
-            //         'status' => 0
-            //     ],[
-            //         'user_id' => auth()->user()->id,
-            //         'materi_code' =>'penjumlahanbiasa',
-            //     ]);
-            // }
            return view('frontend.siswa.pengertian');
 
         //penjumlahan biasa
@@ -33,14 +19,6 @@ class MateriController extends Controller
             $next = OpenMateri::orderBy('id','asc')
                                 ->where('materi_code','penjumlahancampuran')
                                 ->first();
-            // $data = [
-            //     'materi_code' =>$request->q,
-            //     'status' => 0
-            // ];
-            // OpenMateri::updateOrCreate([
-            //     'user_id' => auth()->user()->id,
-            //     'materi_code' =>$request->q,
-            // ],$data);
 
             return view('frontend.siswa.penjumlahanbiasa',compact('next'));
 
@@ -63,14 +41,6 @@ class MateriController extends Controller
                 toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                 return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
             }
-            // OpenMateri::updateOrCreate([
-            //     'user_id' => auth()->user()->id,
-            //     'materi_code' =>$request->q,
-            //     'status' => 0
-            // ],[
-            //     'user_id' => auth()->user()->id,
-            //     'materi_code' =>$request->q,
-            // ]);
             return view('frontend.siswa.penjumlahancampuran',compact('next'));
          }
 
@@ -93,14 +63,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.penjumlahandesimal',compact('next'));
           }
 
@@ -123,14 +85,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.penguranganbiasa',compact('next'));
           }
 
@@ -153,14 +107,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.pengurangancampuran',compact('next'));
           }
 
@@ -184,19 +130,15 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.pengurangandesimal',compact('next'));
           }
 
           //Rangkuman 1
           else  if ($request->q=="rangkuman_1") {
+            $next = OpenMateri::orderBy('id','asc')
+                                ->where('materi_code','bab-1')
+                                ->first();
+
             $isOpen = OpenMateri::where('user_id',auth()->user()->id)
                          ->where('materi_code','rangkuman_1')
                          ->where('status',1)
@@ -218,7 +160,7 @@ class MateriController extends Controller
             //      'user_id' => auth()->user()->id,
             //      'materi_code' =>$request->q,
             //  ]);
-             return view('frontend.siswa.rangkuman_1');
+             return view('frontend.siswa.rangkuman_1',compact('next'));
           }
 
           //perkalian biasa
@@ -240,14 +182,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.perkalianbiasa',compact('next'));
           }
 
@@ -270,14 +204,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.perkaliancampuran',compact('next'));
           }
 
@@ -300,14 +226,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.perkaliandesimal',compact('next'));
           }
 
@@ -330,15 +248,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
-             
              return view('frontend.siswa.pembagianbiasa',compact('next'));
           }
 
@@ -361,14 +270,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.pembagiancampuran',compact('next'));
           }
 
@@ -391,14 +292,6 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-            //  OpenMateri::updateOrCreate([
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //      'status' => 0
-            //  ],[
-            //      'user_id' => auth()->user()->id,
-            //      'materi_code' =>$request->q,
-            //  ]);
              return view('frontend.siswa.pembagiandesimal',compact('next'));
           }
 
@@ -417,14 +310,14 @@ class MateriController extends Controller
                      toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                      return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
                  }
-                 OpenMateri::updateOrCreate([
-                     'user_id' => auth()->user()->id,
-                     'materi_code' =>$request->q,
-                     'status' => 0
-                 ],[
-                     'user_id' => auth()->user()->id,
-                     'materi_code' =>$request->q,
-                 ]);
+                //  OpenMateri::updateOrCreate([
+                //      'user_id' => auth()->user()->id,
+                //      'materi_code' =>$request->q,
+                //      'status' => 0
+                //  ],[
+                //      'user_id' => auth()->user()->id,
+                //      'materi_code' =>$request->q,
+                //  ]);
                  return view('frontend.siswa.rangkuman_2');
               }
           
@@ -435,19 +328,24 @@ class MateriController extends Controller
     {
         // dd($request->all());
         $userId = auth()->user()->id;
-
+        $lanjut = $request->nextmateri;
         //materi saat ini
         $data = [
-            'materi_code' =>$request->nextmateri,
+            'materi_code' =>$lanjut,
             'status' => 1
         ];
         OpenMateri::updateOrCreate([
             'user_id' => auth()->user()->id,
-            'materi_code' =>$request->nextmateri,
+            'materi_code' =>$lanjut,
         ],$data);
 
-        // return view('frontend.siswa.'.$request->nextmateri);
-        return redirect()->route('siswa.materi',['q' => $request->nextmateri]);
+        if ($lanjut == 'bab-1' || $lanjut == 'bab-2' || $lanjut == 'evaluasi') {
+            return redirect()->route('siswa.quiz',$lanjut);
+        } else {
+            return redirect()->route('siswa.materi',$lanjut);
+        }
+        
+       
 
     }
 }

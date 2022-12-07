@@ -54,7 +54,7 @@
       </a>
     </div>
     <div class="hero_btn-continer" style="text-align: right; float: right">
-      <a href="{{Route('siswa.materi',['q' => 'quiz2'])}}" class="call_to-btn btn_white-border">
+      <a href="{{Route('siswa.quiz','bab-2')}}" class="call_to-btn btn_white-border">
 <span>
   Selanjutnya
 </span>

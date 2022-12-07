@@ -52,10 +52,10 @@
                 <li  class="{{Request::segment(1)=="materi" && request()->get('q')=='penguranganbiasa' ? 'active' : ''}}">
                   <a href="{{Route('siswa.materi',['q' => 'penguranganbiasa'])}}">D. Operasi Hitung Pengurangan Pecahan Biasa</a>
                 </li>
-                <li  class="{{Request::segment(1)=="materi" && request()->get('q')=='pengurancampuran' ? 'active' : ''}}">
+                <li  class="{{Request::segment(1)=="materi" && request()->get('q')=='pengurangancampuran' ? 'active' : ''}}">
                   <a href="{{Route('siswa.materi',['q' => 'pengurancampuran'])}}">E. Operasi Hitung Pengurangan Pecahan Campuran</a>
                 </li>
-                <li  class="{{Request::segment(1)=="materi" && request()->get('q')=='pengurandesimal' ? 'active' : ''}}">
+                <li  class="{{Request::segment(1)=="materi" && request()->get('q')=='pengurangandesimal' ? 'active' : ''}}">
                   <a href="{{Route('siswa.materi',['q' => 'pengurandesimal'])}}">F. Operasi Hitung Pengurangan Pecahan Desimal</a>
                 </li>
 	            </ul>
