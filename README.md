@@ -8,13 +8,12 @@ This is an example of online quiz boiler project with multiple level of users an
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
 
 Alternative installation is possible without local dependencies.
 
 Clone the repository
 
-    git clone https://github.com/vijaymgr/quiz.git
+    git clone https://github.com/sitipurmayasari/quizz.git
 
 Switch to the repo folder
 
@@ -44,7 +43,7 @@ You can now access the server at http://localhost:8000
 
 **TL;DR command list**
 
-    git clone https://github.com/vijaymgr/quiz.git
+    git clone https://github.com/sitipurmayasari/quizz.git
     cd quiz
     composer install
     cp .env.example .env
@@ -81,9 +80,6 @@ The api can now be accessed at
 
 # Login
 
-Super Admin Logind Credentials
 
-email: vijayrana.me@gmail.com
-password: secret
 
 # Note : When a new user is registered, it is registered as a 'Admin'. 'Super Admin' can change the roles and permissions of others.
