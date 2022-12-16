@@ -20,7 +20,7 @@
     </div>
     <div class="hero_img-container">
       <div>
-        <img src="{{asset('front/images/hero.png')}}" alt="" class="img-fluid">
+        <img src="{{asset('front/images/5.png')}}" alt="" class="img-fluid">
       </div>
     </div>
   </div>
