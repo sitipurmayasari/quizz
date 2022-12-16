@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\User;
+use App\OpenMateri;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
@@ -147,6 +148,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+
+        $materi = OpenMateri::where('user_id',$id);
+        $materi->delete();
+
         $user = User::findOrFail($id);
         $user->delete();
 
