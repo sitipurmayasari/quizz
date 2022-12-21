@@ -59,5 +59,7 @@ Route::group([
     Route::post('quiz/edit/{slug}', 'QuizController@update');
     Route::delete('quiz/delete', 'QuizController@destroy')->name('quiz.destroy');
     Route::post('quiz/invite/{slug}', 'QuizShareController@invite')->name('quiz.invite');
+    Route::post('/upload', 'QuizController@upload');
+
     
 });

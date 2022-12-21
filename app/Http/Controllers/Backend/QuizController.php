@@ -85,6 +85,8 @@ class QuizController extends Controller
                                 ->where('is_active',1)
                                 ->get();
 
+        // return redirect('quiz.view',$quiz);
+
         return view('backend.quiz.edit', [
                                         'quiz' => $quiz,
                                         'questions' => $questions,
@@ -163,6 +165,14 @@ class QuizController extends Controller
         return redirect()->route('quiz.edit', $slug);
     }
 
+    
+    public function upload(Request $request){
+        $name=$request->file('file')->getClientOriginalExtension();
+        $fileName = date('ymdhis').'.'.$name;
+        $request->file('file')->move('images', $fileName);
+        return response()->json(['location'=>"/images/$fileName"]); 
+
+    }
   
     public function destroy(Request $request)
     {
