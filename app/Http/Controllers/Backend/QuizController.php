@@ -140,7 +140,6 @@ class QuizController extends Controller
     public function update($slug, Request $request)
     {
         // DB::transaction(function() use ($slug, $request) {
-            
             $this->validate($request, [
                     'question' => 'required',
                     'options.*' => 'required'
@@ -162,7 +161,7 @@ class QuizController extends Controller
             
         // });
         
-        return redirect()->route('quiz.edit', $slug);
+        return redirect()->route('quiz.view', $slug);
     }
 
     

@@ -118,6 +118,7 @@ class UserController extends Controller
 
         $user = User::findOrFail($id); //Get role specified by id
         
+        $user->asal = $request->asal;
         if ($request->password) {
             $user->email = $request->email; 
             $user->name = $request->name; 
@@ -129,13 +130,13 @@ class UserController extends Controller
         
         $user->save();
         
-        $roles = $request['roles']; //Retreive all roles
+        // $roles = $request['roles']; //Retreive all roles
         
-        if (isset($roles)) {
-            $user->roles()->sync($roles);  //If one or more role is selected associate user to roles
-        } else {
-            $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
-        }
+        // if (isset($roles)) {
+        //     $user->roles()->sync($roles);  //If one or more role is selected associate user to roles
+        // } else {
+        //     $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
+        // }
 
         return redirect()->route('user.index')->with('success', 'User successfully updated!');
     }

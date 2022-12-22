@@ -10,7 +10,7 @@ class Quiz extends Model
     protected $fillable = ["type","name","slug","status"];
 
     public function questions() {
-        return $this->hasMany(Question::Class);
+        return $this->hasMany(Question::Class)->where('is_active',1);
     }
 
 }
