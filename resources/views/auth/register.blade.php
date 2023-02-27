@@ -39,6 +39,9 @@
                 <div>
                   <input type="text" placeholder="Asal Sekolah" name="asal" required>
                 </div>
+                <div>
+                  <input type="text" placeholder="NISN" name="nisn" required>
+                </div>
                 <div class="d-flex justify-content-center">
                   <button type="submit" class="btn_on-hover">
                     DAFTAR

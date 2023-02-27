@@ -69,7 +69,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'asal' => $data['asal']
+            'asal' => $data['asal'],
+            'nisn' => $data['asal'],
         ]);
 
         $user->assignRole('User / Siswa');

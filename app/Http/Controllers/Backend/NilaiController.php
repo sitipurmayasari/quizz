@@ -20,6 +20,7 @@ class NilaiController extends Controller
                     ->join('users', 'users.email', '=', 'user_question_answer.email')
                     ->join('questions', 'questions.id', '=', 'user_question_answer.question_id')
                     ->join('quiz', 'quiz.id', '=', 'questions.quiz_id')
+                    ->whereNull('users.deleted_at')
                     ->when($request->keyword, function ($query) use ($request) {
                         $query->where('user_question_answer.email', 'LIKE', '%'.$request->keyword.'%')
                              ->orWhere('users.asal', 'LIKE', '%'.$request->keyword.'%');
