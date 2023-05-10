@@ -1,22 +1,118 @@
 @extends('layouts.siswa')
 @section('content')
-<h2 class="mb-4">Pengertian Pecahan</h2>
+
+<h1 class="mb-4"style=" width: auto;
+    background-color: #EAEAEA;
+    padding: 8px 8px;
+    border-left: 5px solid  #064635;
+    word-wrap: break-word;
+    line-height: 1.e4m;;">Operasi Hitung Pecahan</h1>
+<hr>
+<div style="border: solid 1px;width: auto;border-color:orange; color-back;  background-color:white;">
+  <div style="margin:0; pading:0; text-align:center; background-color:orange; color:white">
+    <b>Tujuan Pembelajaran</b>
+  </div>
+  <p style="margin-left:10px; margin-top:10px;">
+    Peserta didik dapat menjelaskan pengertian pecahan dengan benar.
+  </p>
+</div>
+<br>
 <p>
-  Pecahan adalah satu kesatuan yang memecah menjadi beberapa bagian-bagian yang lebih kecil. Pada bentuk bilangan pecahan biasanya dituliskan dalam a/b, Bilangan yang berada diatas garis (a) pemisah disebut dengan pembilang, sedangkan bilangan dibagian bawah garis pemisah disebut sebagai penyebut(b). Pembilang adalah bilangan yang dibagi, sedangkan penyebut adalah bilangan yang menjadi pembagi.
+  Masih ingatkah kamu, apa yang dimaksud dengan pecahan? Sebelumnya kamu sudah mengenal pecahan dikelas IV, Nah sekarang dikelas V kita akan belajar tentang operasi hitung pecahan. Untuk mengingat kembali ingatanmu mengenai pecahan, amatilah peristiwa dibawah dan simaklah penjelasannya dengan cermat! 
+  <br>&nbsp;<br>
+  <b>Ayo Amati!</b>
 </p>
-<p>Menentukan Pecahan dengan gambar :</p>
-<div style="text-align: center;"><img src="{{asset('front/images/pengertian.png')}}" alt=""></div>
-<br><br><hr>
+<div style="text-align: center;"><img src="{{asset('images/materi/pengertian/satu.png')}}" alt="" style="width: 250px;"></div>
+<p>
+  Siti membawa 1 nampan yang berisi kue. Dia ingin memberikan kue itu kepada 4 adiknya dengan bagian yang sama besar. Coba perhatikan pada gambar diatas, berapakah kue yang diterima oleh masing-masing adiknya siti? <br>
+  Jadi, Dari gambar diatas, terlihat bahwa masing-masing anak mendapatkan &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span> &nbsp; bagian karena 1 bagian nampan yang berisi kue dibagikan kepada 4 anak.
+</p>
 <br>
-<p>Jadi, Kesimpulan dari pengertian di atas adalah :</p>
-<input type="radio"  value="a" name="pengertian" id="pengertian_a"> a. Bilangan yang ada di atas adalah penyebut dan yang di bawah adalah pembilang <br>
-<input type="radio"  value="b" name="pengertian" id="pengertian_b"> b. Bilangan ditas dan dibawah dipisahkan oleh garis <br>
-<input type="radio"  value="c" name="pengertian" id="pengertian_c"> c. Bilangan yang ada di atas adalah pembilang dan yang di bawah adalah penyebut <br>
-<input type="radio"  value="d" name="pengertian" id="pengertian_d"> d. Bilangan yang dibagi adalah penyebut, sedangkan pembilang adalah bilangan yang menjadi pembagi. <br>
+<div style="border: dashed 1px; text-align:center; padding:10px;">
+  <p>
+    Bilangan pecahan dapat diartikan sebagai sebuah bilangan yang memiliki pembilang dan juga penyebut. Pecahan dapat ditulis
+    &nbsp; <span class="frac"><sup>a</sup><span>&frasl;</span><sub>b</sub></span> &nbsp; 
+    , yang artinya a disebut pembilang dan b disebut penyebut nilai b tidak boleh sama dengan 0.
+  </p>
+</div>
 <br>
-<span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
-  <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
-  <input type="hidden" id="jawaban_benar" value="0">
+Mari perhatikan penjelasan video bilangan pecahan di bawah ini!
+<div style="text-align: center;"><img src="{{asset('images/materi/pengertian/dua.png')}}" alt="" style="width: 400px;"></div>
+<br>
+Menentukan pecahan dengan gambar
+<div style="text-align: center;"><img src="{{asset('images/materi/pengertian/tiga.png')}}" alt=""></div>
+<br>
+<p>
+  Operasi hitung pecahan dalam matematika terdiri dari penjumlahan, pengurangan, perkalian, dan pembagian. Cara melakukan operasi hitung pecahan pada penjumlahan dan pengurangan hanya bisa dilakukan apabila penyebutnya sama. Sedangkan pada operasi hitung pecahan perkalian dan pembagian dapat dilakukan pada bentuk pecahan biasa dengan penyebut yang sama maupun berbeda.
+</p>
+<br><br>
+<h4 class="mb-4">Ayo Mencoba!</h4>
+<hr>
+<br>
+<p>
+  Perhatikan gambar dibawah. Isilah titik-titik dan tentukan nilai pecahan sesuai gambar! <br>
+  inputkan jawaban di dalam kolom. Jawaban benar akan berwarna biru, jika salah berwarna merah.
+</p>
+<table>
+  <tr>
+    <td style="width: 100px;"><img src="{{asset('images/materi/pengertian/empat.png')}}" alt="" style="width: 100px;"></td>
+    <td>
+      = 
+      &nbsp; &nbsp; &nbsp;
+      <input type="number" name="a1" id="a1" value="" style="width: 40px;" onclick="satu()" onkeyup="satu()">
+    </td>
+    <td>
+      <span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
+      <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      <input type="hidden" id="jawaban_benar1" value="0">
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><img src="{{asset('images/materi/pengertian/lima.png')}}" alt="" style="width: 100px;"></td>
+    <td>
+      =
+      &nbsp; &nbsp; &nbsp;
+      <span class="frac"><sup>
+        <input type="number" name="a2" id="a2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
+      </sup><span>&frasl;</span><sub>
+        <input type="number" name="b2" id="b2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
+      </sub></span>
+    </td>
+    <td>
+      <span id="s2_benar" hidden class="badge badge-pill badge-success">Benar</span>
+      <span id="s2_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      <input type="hidden" id="jawaban_benar2" value="0">
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:center;"><img src="{{asset('images/materi/pengertian/enam.png')}}" alt="" style="width: 50px;"></td>
+    <td>
+      =
+      &nbsp; &nbsp; &nbsp;
+      <span class="frac"><sup>
+        <input type="number" name="a3" id="a3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
+      </sup><span>&frasl;</span><sub>
+        <input type="number" name="b3" id="b3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
+      </sub></span>
+    </td>
+    <td>
+      <span id="s3_benar" hidden class="badge badge-pill badge-success">Benar</span>
+      <span id="s3_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+      <input type="hidden" id="jawaban_benar3" value="0">
+    </td>
+  </tr>
+</table>
+
 <br><br><br>
 <div class="hero_btn-continer" style="text-align: right;">
   <a href="{{Route('siswa.materi',['q' => 'penjumlahanbiasa'])}}" class="call_to-btn btn_white-border"> 
@@ -31,34 +127,69 @@
 
 @section('script')
 <script>
-  $(document).ready(function(){
+  $().ready( function () {
     var status = $("#status").val();
-    if (status == 1) {
-      $("#lanjut").removeAttr("hidden");
+      if (status == 1) {
+        $("#lanjut").removeAttr("hidden");
+      }
+    } );
+
+    function satu() {
+      var a1 = $("#a1").val();
+      if (a1 == 1) {
+        $("#s1_benar").removeAttr("hidden");
+        $("#s1_salah").attr("hidden",true);
+        $("#jawaban_benar1").val(1);
+      } else {
+        $("#s1_salah").removeAttr("hidden");
+        $("#s1_benar").attr("hidden",true);
+        $("#jawaban_benar1").val(0);
+      }
       lanjut()
     }
 
-    $("#pengertian_c").click(function(){
-      $("#s1_benar").removeAttr("hidden");
-      $("#s1_salah").attr("hidden",true);
-      $("#jawaban_benar").val(1);
-    });
-    $("#pengertian_a").click(function(){
-      $("#s1_salah").removeAttr("hidden");
-      $("#s1_benar").attr("hidden",true);
-      $("#jawaban_benar").val(0);
-    });
-    $("#pengertian_b").click(function(){
-      $("#s1_salah").removeAttr("hidden");
-      $("#s1_benar").attr("hidden",true);
-      $("#jawaban_benar").val(0);
-    });
-    $("#pengertian_d").click(function(){
-      $("#s1_salah").removeAttr("hidden");
-      $("#s1_benar").attr("hidden",true);
-      $("#jawaban_benar").val(0);
-    });
+    function dua() {
+      var a2 = $("#a2").val();
+      var b2 = $("#b2").val();
+
+      if (a2 == 1 && b2 == 2) {
+        $("#s2_benar").removeAttr("hidden");
+        $("#s2_salah").attr("hidden",true);
+        $("#jawaban_benar2").val(1);
+      } else {
+        $("#s2_salah").removeAttr("hidden");
+        $("#s2_benar").attr("hidden",true);
+        $("#jawaban_benar2").val(0);
+      }
+      lanjut()
+    }
+
+    function tiga() {
+      var a3 = $("#a3").val();
+      var b3 = $("#b3").val();
+
+      if (a3 == 1 && b3 == 4) {
+        $("#s3_benar").removeAttr("hidden");
+        $("#s3_salah").attr("hidden",true);
+        $("#jawaban_benar2").val(1);
+      } else {
+        $("#s3_salah").removeAttr("hidden");
+        $("#s3_benar").attr("hidden",true);
+        $("#jawaban_benar2").val(0);
+      }
+      lanjut()
+    }
+
+    function lanjut(params) {
+      var satu = $("#jawaban_benar1").val();
+      var dua = $("#jawaban_benar2").val();
+      var tiga = $("#jawaban_benar3").val();
+
+      if (satu == 1 && dua == 1 && tiga == 1 ) {
+        $("#simpan").removeAttr("hidden");
+        $("#lanjut").attr("hidden",true);
+      }
+    }
     
-  });
 </script>
 @endsection

@@ -1,79 +1,172 @@
 @extends('layouts.siswa')
 @section('content')
+  <h1 class="mb-4"style=" width: auto;
+  background-color: #EAEAEA;
+  padding: 8px 8px;
+  border-left: 5px solid  #064635;
+  word-wrap: break-word;
+  line-height: 1.e4m;;">Pengurangan Pecahan</h1>
+  <hr>
+  <div style="border: solid 1px; width: fit-content;border-color:orange; color-back;  background-color:white;">
+  <div style="margin:0; pading:0; text-align:center; background-color:orange; color:white">
+  <b>Tujuan Pembelajaran</b>
+  </div>
+  <p> 
+  1. Peserta didik dapat mengidentifikasi pengurangan dua pecahan campuran dengan penyebut berbeda dengan benar. <br>
+  2. Peserta didik dapat menyelesaikan masalah yang berkaitan dengan pengurangan dua pecahan campuran penyebut berbeda dengan benar.
+  </p>
+  </div>
+  <br>
   <h2 class="mb-4">E. Operasi Hitung Pengurangan Pecahan Campuran</h2>
   <p>
     Pada pengurangan pecahan campuran, cara mengurangi pecahan campuran pada dasarnya tidak 
     jauh berbeda dengan pengurangan pecahan biasa. Untuk menghitung dalam pecahan campuran 
-    ini terlebih dahulu pisahkan antara nilai pecahan dengan nilai bilangan bulatnya. <br>
-    Contoh Soal : <br>
-    2 &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span> 
-    &nbsp; - &nbsp;
-    1 &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span> 
-    &nbsp; = .... &nbsp;
-    <br>
-    Ilustrasi penyelesaian <br>
-    <img src="{{asset('front/images/kurcam.png')}}" style="width: 500px;">
-    <br>
-    Pisahkan antara bilangan bulat dengan bilangan pecahan, kemudian samakan kedua penyebut pecahan tersebut menggunakan kpk.
-    <br>
-    <img src="{{asset('front/images/kurcam2.png')}}" style="width: 500px;">
+    ini terlebih dahulu pisahkan antara nilai pecahan dengan nilai bilangan bulatnya.
+    Ayo Amati!
+    Agar kamu memahami pengurangan pecahan campuran, maka simak penjelasan di bawah ini 
+    Contoh
+    Ibu Ani membeli daging sebanyak 3
+    <span class="frac"><sup>2</sup><span>&frasl;</span><sub>4</sub></span>
+    kg. sesampainya dirumah ibu Ani memasak daging 
+    tersebut sebanyak 2
+    <span class="frac"><sup>1</sup><span>&frasl;</span><sub>3</sub></span>
+    . Berapa kg daging sisa yang dimiliki ibu Ani?
+  </p>
+  <div style="text-align: center;"><img src="{{asset('images/materi/kurang2/satu.png')}}" alt="" style="width: 300px;"></div>
+  <p>
+    Jawab : &nbsp; &nbsp;
+    3 <span class="frac"><sup>2</sup><span>&frasl;</span><sub>4</sub></span> - 
+    2 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>3</sub></span> =
+    3 <span class="frac"><sup>6</sup><span>&frasl;</span><sub>12</sub></span> - 
+    2 <span class="frac"><sup>4</sup><span>&frasl;</span><sub>12</sub></span> =
+    1 <span class="frac"><sup>2</sup><span>&frasl;</span><sub>12</sub></span>
     <br><br>
-    Jadi, &nbsp;
-    2 &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span> 
-    &nbsp; - 
-    1 &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span> 
-    &nbsp; = ( 2 - 1 ) - 
-    &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span> 
-    &nbsp; - 
-    &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span> 
-    &nbsp; = 1 - 
-    &nbsp; <span class="frac"><sup>5</sup><span>&frasl;</span><sub>20</sub></span> 
-    &nbsp; - 
-    &nbsp; <span class="frac"><sup>4</sup><span>&frasl;</span><sub>20</sub></span> 
-    &nbsp; = 
-    1 &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>20</sub></span> 
+  </p>
   <br><br><hr>
-  <h4 class="mb-4">Ayo Mencoba!</h4>
+  <h4 class="mb-4">Asyik Mencoba!</h4>
   <br>
   <p>
-    Ibu Membeli 
-    5&nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>3</sub></span> &nbsp; 
-    Kg telur. Kemudian sebanyak 
-    2&nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span> &nbsp;
-    telur digunakan untuk membuat kue sarang semut. 
-    Lalu sisa berapakah telur yang dimiliki ibu sekarang? <br>
-    Jawab : <br>
-    5&nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>3</sub></span>  
-    &nbsp; -  &nbsp;
-    2&nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span> &nbsp;
-    &nbsp; =
-    ( 5 - 
-    <input type="number" name="" id="a" style="width: 35px;" value="3" onkeyup="sum()" onclick="sum()"> ) +
-    &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>3</sub></span> &nbsp; -
-    &nbsp; <span class="frac"><sup>1</sup><span>&frasl;</span><sub>
-      <input type="number" name="" id="b" style="width: 35px;" value="5" onkeyup="sum()" onclick="sum()">
-    </sub></span>
-    &nbsp; = 
-    <input type="number" name="" id="c" style="width: 35px;" value="3" onkeyup="sum()" onclick="sum()"> +
-    &nbsp; <span class="frac"><sup>5</sup><span>&frasl;</span><sub>
-      <input type="number" name="" id="d" style="width: 35px;" value="15" onkeyup="sum()" onclick="sum()">
-    </sub></span> &nbsp; -
-    &nbsp; <span class="frac"><sup>
-      <input type="number" name="" id="e" style="width: 35px;" value="3" onkeyup="sum()" onclick="sum()">
-    </sup><span>&frasl;</span><sub>
-      <input type="number" name="" id="f" style="width: 35px;" value="15" onkeyup="sum()" onclick="sum()">
-    </sub></span>
-    &nbsp; = 
-    <input type="number" name="" id="g" style="width: 35px;" value="3" onkeyup="sum()" onclick="sum()">
-    &nbsp; <span class="frac"><sup>
-      <input type="number" name="" id="h" style="width: 35px;" value="2" onkeyup="sum()" onclick="sum()">
-    </sup><span>&frasl;</span><sub>
-      <input type="number" name="" id="i" style="width: 35px;" value="15" onkeyup="sum()" onclick="sum()">
-    </sub></span>
-    &nbsp;&nbsp;
-    <span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
-    <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
-    <input type="hidden" id="jawaban_benar" value="0">
+    Tentukan pengurangan pecahan campuran pada gambar berarsir di bawah ini! Jawaban benar akan berwarna biru, jika salah akan berwarna merah.
+  </p>
+  <table style="width: 100%">
+    <tr>
+      <td style="width: 5%; vertical-align:top;">1.</td>
+      <td>
+        <img src="{{asset('images/materi/kurang2/dua.png')}}" alt="" style="width: 200px;"> {{-- soal no 1 --}} <br>
+        Ayu membeli 2 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span>
+        kg gula. Gula tersebut Ayu gunakan untuk membuat kue 
+        sebanyak 1 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span>
+        kg. berapa kg sisa gula yang dimiliki Ayu?
+        <br><br>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp;
+        1 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>5</sub></span> &nbsp; = &nbsp; 
+          <span class="frac"><sup>9</sup><span>&frasl;</span><sub>4</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp; 
+          <span class="frac"><sup>6</sup><span>&frasl;</span><sub>5</sub></span> &nbsp; = &nbsp;
+          <span class="frac"><sup>45</sup><span>&frasl;</span><sub>20</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp;
+          <span class="frac"><sup>24</sup><span>&frasl;</span><sub>20</sub></span> &nbsp; = &nbsp; 
+        <span class="frac"><sup>
+          <input type="number" name="a1" id="a1" value="" style="width: 40px;" onclick="satu()" onkeyup="satu()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="b1" id="b1" value=""  style="width: 40px;" onclick="satu()" onkeyup="satu()">
+        </sub></span>
+        &nbsp; = &nbsp;
+        <input type="number" name="c1" id="c1" style="width: 40px;" value="" onclick="satu()" onkeyup="satu()">
+        <span class="frac"><sup>
+          <input type="number" name="d1" id="d1" style="width: 40px;" value="" onclick="satu()" onkeyup="satu()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="e1" id="e1" style="width: 40px;" value="" onclick="satu()" onkeyup="satu()">
+        </sub></span>
+        &nbsp; &nbsp; &nbsp;
+        <span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+        <input type="hidden" id="jawaban_benar1" value="0">
+        <br><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">2.</td>
+      <td>
+        <img src="{{asset('images/materi/kurang2/tiga.png')}}" alt="" style="width: 200px;"> {{-- soal no 2 --}} <br>
+        Seorang ibu masih memiliki stok 5 <span class="frac"><sup>2</sup><span>&frasl;</span><sub>3</sub></span>
+        kg beras, ibu kemudian memasak beras tersebut untuk makan sebanyak 
+        1 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>2</sub></span>
+        kg, tinggal berapakah sisa persediaan beras ibu?
+        <br><br>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        5 <span class="frac"><sup>2</sup><span>&frasl;</span><sub>3</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp;
+        1 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>2</sub></span> &nbsp; = &nbsp; 
+          <span class="frac"><sup>17</sup><span>&frasl;</span><sub>3</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp; 
+          <span class="frac"><sup>3</sup><span>&frasl;</span><sub>2</sub></span> &nbsp; = &nbsp;
+          <span class="frac"><sup>51</sup><span>&frasl;</span><sub>6</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp;
+          <span class="frac"><sup>6</sup><span>&frasl;</span><sub>6</sub></span> &nbsp; = &nbsp; 
+        <span class="frac"><sup>
+          <input type="number" name="a2" id="a2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="b2" id="b2" value=""  style="width: 40px;" onclick="dua()" onkeyup="dua()">
+        </sub></span>
+        &nbsp; = &nbsp;
+        <input type="number" name="c2" id="c2" style="width: 40px;" value="" onclick="dua()" onkeyup="dua()">
+        <span class="frac"><sup>
+          <input type="number" name="d2" id="d2" style="width: 40px;" value="" onclick="dua()" onkeyup="dua()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="e2" id="e2" style="width: 40px;" value="" onclick="dua()" onkeyup="dua()">
+        </sub></span>
+        &nbsp; &nbsp; &nbsp;
+        <span id="s2_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s2_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+        <input type="hidden" id="jawaban_benar2" value="0">
+        <br><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">3.</td>
+      <td>
+        <img src="{{asset('images/materi/kurang2/empat.png')}}" alt="" style="width: 200px;"> {{-- soal no 3--}} <br>
+        Seorang pedagang memiliki semangka 3 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span>
+        kuintal. Jika hari ini terjual 1 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>2</sub></span>
+        kuintal, berapa kuintal semangka yang tersisa?
+        <br><br>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        3 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>4</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp;
+        1 <span class="frac"><sup>1</sup><span>&frasl;</span><sub>2</sub></span> &nbsp; = &nbsp; 
+          <span class="frac"><sup>13</sup><span>&frasl;</span><sub>4</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp; 
+          <span class="frac"><sup>3</sup><span>&frasl;</span><sub>2</sub></span> &nbsp; = &nbsp;
+          <span class="frac"><sup>13</sup><span>&frasl;</span><sub>4</sub></span> &nbsp;&nbsp; - &nbsp;&nbsp;
+          <span class="frac"><sup>6</sup><span>&frasl;</span><sub>4</sub></span> &nbsp; = &nbsp; 
+        <span class="frac"><sup>
+          <input type="number" name="a3" id="a3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="b3" id="b3" value=""  style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
+        </sub></span>
+        &nbsp; = &nbsp;
+        <input type="number" name="c3" id="c3" style="width: 40px;" value="" onclick="tiga()" onkeyup="tiga()">
+        <span class="frac"><sup>
+          <input type="number" name="d3" id="d3" style="width: 40px;" value="" onclick="tiga()" onkeyup="tiga()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="e3" id="e3" style="width: 40px;" value="" onclick="tiga()" onkeyup="tiga()">
+        </sub></span>
+        &nbsp; &nbsp; &nbsp;
+        <span id="s3_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s3_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+        <input type="hidden" id="jawaban_benar3" value="0">
+        <br><br>
+      </td>
+    </tr>
+  </table>
+
   <br><br><br>
   <div>
     <div class="hero_btn-continer" style="text-align: left; float: left">
@@ -115,36 +208,73 @@
     }
   });
 
-   function sum() {
-      var a = $("#a").val();
-      var b = $("#b").val();
-      var c = $("#c").val();
-      var d = $("#d").val();
-      var e = $("#e").val();
-      var f = $("#f").val();
-      var g = $("#g").val();
-      var h = $("#h").val();
-      var i = $("#i").val();
+  function satu() {
+      var a1 = $("#a1").val();
+      var b1 = $("#b1").val();
+      var c1 = $("#c1").val();
+      var d1 = $("#d1").val();
+      var e1 = $("#e1").val();
 
-      if (a == 3 && b == 5 && c == 3 && d == 15 && e == 3 && f == 15 && g == 3 && h == 2 && i == 15) {
+      if (a1 == 21 && b1 == 20 && c1 == 1 && d1 == 1 && e1 == 20 ) {
         $("#s1_benar").removeAttr("hidden");
         $("#s1_salah").attr("hidden",true);
-        $("#jawaban_benar").val(1);
+        $("#jawaban_benar1").val(1);
       } else {
         $("#s1_salah").removeAttr("hidden");
         $("#s1_benar").attr("hidden",true);
-        $("#jawaban_benar").val(0);
+        $("#jawaban_benar1").val(0);
+      }
+      lanjut()
+    }
+
+    function dua() {
+      var a2 = $("#a2").val();
+      var b2 = $("#b2").val();
+      var c2 = $("#c2").val();
+      var d2 = $("#d2").val();
+      var e2 = $("#e2").val();
+
+      if (a2 == 45 && b2 == 6 && c2 == 5 && d2 == 15 && e2 == 6 ) {
+        $("#s2_benar").removeAttr("hidden");
+        $("#s2_salah").attr("hidden",true);
+        $("#jawaban_benar2").val(1);
+      } else {
+        $("#s2_salah").removeAttr("hidden");
+        $("#s2_benar").attr("hidden",true);
+        $("#jawaban_benar2").val(0);
+      }
+      lanjut()
+    }
+
+    function tiga() {
+      var a3 = $("#a3").val();
+      var b3 = $("#b3").val();
+      var c3 = $("#c3").val();
+      var d3 = $("#d3").val();
+      var e3 = $("#e3").val();
+
+      if (a3 == 7 && b3 == 4 && c3 == 1 && d3 == 3 && e3 == 4 ) {
+        $("#s3_benar").removeAttr("hidden");
+        $("#s3_salah").attr("hidden",true);
+        $("#jawaban_benar3").val(1);
+      } else {
+        $("#s3_salah").removeAttr("hidden");
+        $("#s3_benar").attr("hidden",true);
+        $("#jawaban_benar3").val(0);
       }
       lanjut()
     }
 
     function lanjut(params) {
-      var benar = $("#jawaban_benar").val();
-      var status = $("#status").val();
-      if (benar == 1 && status==0) {
+      var satu = $("#jawaban_benar1").val();
+      var dua = $("#jawaban_benar2").val();
+      var tiga = $("#jawaban_benar3").val();
+
+      if (satu == 1 && dua == 1 && tiga == 1 && status==0 ) {
         $("#simpan").removeAttr("hidden");
         $("#lanjut").attr("hidden",true);
       }
     }
+
 </script>
 @endsection

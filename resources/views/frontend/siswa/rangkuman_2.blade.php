@@ -39,7 +39,7 @@
       mengalikan angka penyebut dengan bilangan bulat kemudian menambahkan nilai hasilnya dengan angka pembilang.
     </li>
     <li>
-      <b>Pembagian decimal</b> <br>
+      <b>Pembagian desimal</b> <br>
       Pecahan decimal diubah dalam bentuk pecahan biasa, kemudian lakukan operasi pembagian biasa.
     </li>
   </ul>

@@ -67,9 +67,12 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="{{Route('login')}}">LogIn</a>
+                  <a class="nav-link" href="{{Route('login')}}">Login Siswa</a>
                 </li>
 
+                <li class="nav-item">
+                  <a class="nav-link" href="{{Route('logadmin')}}">Login Guru</a>
+                </li>
               </ul>
             </div>
         </nav>

@@ -28,8 +28,7 @@
     </style>
     @yield('css')
   </head>
-  <body style="background-color: aqua">
-		
+  <body>
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar" class="{{Request::segment(1)=="materi" || Request::segment(2)=="quiz" ? '' : 'active'}}">
 				<div class="p-4 pt-5">

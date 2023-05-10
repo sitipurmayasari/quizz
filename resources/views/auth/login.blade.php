@@ -5,11 +5,13 @@
     <div class="hero-container container" style="padding: 0;">
         <div class="hero_detail-box">
           <div class="contact-form col-md-8">
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login.siswa') }}">
                 @csrf
                 <div>
-                <input type="email" name="email" class="@error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}" required>
-                    @error('email')
+                <input type="text" name="nisn"  class="@error('nisn') is-invalid @enderror"
+                 placeholder="NISN" value="{{ old('nisn') }}" required>
+                {{-- <input type="email" name="email" class="@error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}" required> --}}
+                    @error('nisn    ')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

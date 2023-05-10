@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\Route;
 // })->name('home');
 
 Route::get('/', 'LandingController@index')->name('home');
+Route::get('/logadmin', 'LandingController@logadmin')->name('logadmin');
 Route::get('/login', 'LandingController@login')->name('login');
+Route::post('/login/siswa', 'LandingController@verify_siswa')->name('login.siswa');
+Route::post('/login/guru', 'LandingController@verify_guru')->name('login.guru');
+
 Route::get('/curicullum', 'CurrController@index')->name('curicullum');
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/register', 'RegisterController@index')->name('register');

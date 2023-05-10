@@ -3,6 +3,24 @@
   <h2 class="mb-4">Rangkuman Penambahan dan Pengurangan Pecahan</h2>
   <ul>
     <li>
+      Menjumlahkan dan mengurangkan dua pecahan dilakukan dengan cara menyamakan penyebut 
+      kedua pecahan tersebut, kemudian menjumlahkan (atau mengurangkan) pembilangpembilangnya.
+    </li>
+    <li>
+      Pecahan campuran dimana ada bilangan bulat dan bilangan biasa, harus dirubah dulu bilangan 
+      tersebut menjadi pecahan biasa.
+    </li>
+    <li>
+      Mengubah bentuk pecahan menjadi bentuk desimal dilakukan dengan cara menjadikan bentuk 
+      pecahan berpenyebut 10, 100, 1000, dan seterusnya, kemudian mengubahnya menjadi pecahan 
+      desimal. 
+    </li>
+    <li>
+      Mengubah bentuk desimal menjadi bentuk pecahan dilakukan dengan cara menuliskan bentuk
+      desimal menjadi bentuk pecahan, kemudian menyederhanakannya.
+
+    </li>
+    {{-- <li>
       <b>Penjumlahan</b> <br>
       Penjumlahan pecahan dapat dilakukan jika penyebutnya sama, bilangan yang dijumlahkan hanya bilangan pada pembilangnya saja. <br>
       <span class="frac"><sup>a</sup><span>&frasl;</span><sub>b</sub></span>
@@ -44,7 +62,7 @@
       <b>Pengurangan decimal</b> <br>
       Pecahan decimal diubah dalam bentuk pecahan biasa, 
       atau langsung menggunakan cara bersusun disamakan posisi komanya.
-    </li>
+    </li> --}}
   </ul>
   <br><br><br>
   <div>

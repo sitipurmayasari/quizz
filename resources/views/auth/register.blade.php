@@ -28,19 +28,19 @@
               <form method="POST" action="{{ route('register') }}">
                   @csrf
                 <div>
-                  <input type="text" placeholder="Nama" name="name" required>
+                  <input type="text" placeholder="Nama" name="name" required value="{{old('name')}}">
                 </div>
                 <div>
-                  <input type="email" placeholder="Email" name="email" required>
+                  <input type="email" placeholder="Email" name="email" required value="{{old('email')}}">
                 </div>
                 <div>
-                  <input type="text" placeholder="Password" name="password" required>
+                  <input type="text" placeholder="Password" name="password" required >
                 </div>
                 <div>
-                  <input type="text" placeholder="Asal Sekolah" name="asal" required>
+                  <input type="text" placeholder="Asal Sekolah" name="asal" required value="{{old('asal')}}">
                 </div>
                 <div>
-                  <input type="text" placeholder="NISN" name="nisn" required>
+                  <input type="text" placeholder="NISN" name="nisn" required value="{{old('nisn')}}">
                 </div>
                 <div class="d-flex justify-content-center">
                   <button type="submit" class="btn_on-hover">
