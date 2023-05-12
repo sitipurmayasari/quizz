@@ -261,11 +261,11 @@ a <span class="frac"><sup>b</sup><span>&frasl;</span><sub>c</sub></span> &nbsp; 
       if (a4 == 6 && b4 == 5 ) {
         $("#s4_benar").removeAttr("hidden");
         $("#s4_salah").attr("hidden",true);
-        $("#jawaban_benar3").val(1);
+        $("#jawaban_benar4").val(1);
       } else {
         $("#s4_salah").removeAttr("hidden");
         $("#s4_benar").attr("hidden",true);
-        $("#jawaban_benar3").val(0);
+        $("#jawaban_benar4").val(0);
       }
       lanjut()
     }

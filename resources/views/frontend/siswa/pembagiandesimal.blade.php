@@ -294,6 +294,7 @@
       var satu = $("#jawaban_benar1").val();
       var dua = $("#jawaban_benar2").val();
       var tiga = $("#jawaban_benar3").val();
+      var empat = $("#jawaban_benar4").val();
 
       if (satu == 1 && dua == 1 && tiga == 1 && empat == 1 && status==0) {
         $("#simpan").removeAttr("hidden");

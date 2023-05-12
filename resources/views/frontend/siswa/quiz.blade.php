@@ -60,7 +60,7 @@
                     @else 
                         <input type="radio" required value="{{ $option->id }}" name="{{$soal->id}}">
                         <label for=""> {!! $option->option!!} </label><br/>
-                    @endifz
+                    @endif
                     
                 @endforeach
                 
