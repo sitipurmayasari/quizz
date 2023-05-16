@@ -186,6 +186,8 @@
         <input type="hidden" id="status" name="status" value="{{$next ? $next->status : 0}}">
         <input type="hidden" id="materi_code" name="materi_code" value="{{Request('q')}}">
         <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next ? $next->materi_code : 'perkaliancampuran'}}">
+        <input type="hidden" id="now" name="now" value="{{$lastkuis}}">
+        
 
         <button type="submit" id="simpan" hidden class="call_to-btn btn_white-border">
           Selanjutnya<img src="{{asset('front/images/right-arrow.png')}}" alt="">
@@ -205,10 +207,27 @@
 <script>
    $().ready( function () {
     var status = $("#status").val();
+    var now = $("#now").val();
+    
     if (status == 1) {
       $("#lanjut").removeAttr("hidden");
     }
+
+    if (now != '1') {
+      myFunction()
+    }
   });
+
+  function myFunction() {
+      if (window.confirm('Wah, Nilai KKM mu masih belum memenuhi niiih, silahkan ulangi lagi kuisnya!'))
+        {
+          window.location.href = "/siswa/quiz/bab-1";
+        }
+        else{
+          window.location.href = "/home";
+        }
+
+    } 
 
   function satu() {
       var a1 = $("#a1").val();

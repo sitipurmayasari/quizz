@@ -70,6 +70,8 @@
         @endforeach
         <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
             <input type="hidden" id="materi_code" name="materi_code" value="{{$quiz->slug}}">
+            <input type="hidden" id="status" name="status" value="{{$takequiz->status}}">
+            <input type="hidden" id="last_materi" name="last_materi" value="{{$open->materi_code}}">
             @if ($is_repeat)
                 <button class="btn btn-primary border-success align-items-center btn-success" type="submit">
                     KIRIM JAWABAN<i class="fa fa-angle-right ml-2"></i>
@@ -80,4 +82,48 @@
     </div>
 </form>
       <!-- quiz -->
+@endsection
+
+@section('script')
+<script>
+   $().ready( function () {
+        var status = $("#status").val();
+        var now = $("#materi_code").val();
+        var last = $("#last_materi").val();
+        if (status == '0') {
+            if (now == "bab-1" && last != "rangkuman_1") {
+                materi()
+            }else if (now == "bab-2" && last != "rangkuman_2" ){
+                materi();
+            }else if (now == "evaluasi-akhir" && last != "bab-2"  ){
+                myFunction();
+            }
+        }
+       
+    });
+
+  function myFunction() {
+      // alert("Wah, Nilai KKM mu masih belum memenuhi niiih, silahkan ulangi lagi kuisnya!");
+      if (window.confirm('Wah, Nilai KKM mu masih belum memenuhi niiih, silahkan ulangi lagi kuisnya!'))
+        {
+          window.location.href = "/siswa/quiz/bab-2";
+        }
+        else{
+          window.location.href = "/home";
+        }
+
+    } 
+
+    function materi() {
+      // alert("Wah, Nilai KKM mu masih belum memenuhi niiih, silahkan ulangi lagi kuisnya!");
+      if (window.confirm('Kamu belum bisa ikut kuis ini ya, silahkan selesaikan materi kamu!'))
+        {
+          window.location.href = "/home";
+        }
+        else{
+          window.location.href = "/home";
+        }
+
+    } 
+</script>
 @endsection

@@ -305,6 +305,13 @@ class MateriController extends Controller
                          ->where('status',1)
                          ->get()
                          ->count();
+
+            $lastkuis = OpenMateri::where('user_id',auth()->user()->id)
+                         ->where('materi_code','bab-1')
+                         ->where('status',1)
+                         ->get()
+                         ->count();
+
              if ($isOpen==0) {
                 $lastMateri = OpenMateri::orderBy('id','asc')
                          ->where('user_id',auth()->user()->id)
@@ -313,7 +320,7 @@ class MateriController extends Controller
                  toastr()->error('Selesaikan Materi '.$lastMateri->materi_code, 'Lock!');
                  return redirect()->route('siswa.materi',['q' => $lastMateri->materi_code]);
              }
-             return view('frontend.siswa.perkalianbiasa',compact('next'));
+             return view('frontend.siswa.perkalianbiasa',compact('next', 'lastkuis'));
           }
 
           //perkalian campuran

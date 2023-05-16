@@ -26,6 +26,16 @@ class QuizzController extends Controller
     public function index($slug)
     {
         $quiz = $this->quiz->with('questions.options')->where('slug', $slug)->firstOrFail();
+
+        $open = OpenMateri::where('user_id',auth()->user()->id)
+                            ->where('status','1')
+                            ->orderby('id','desc')
+                            ->first();
+
+        $takequiz = OpenMateri::where('user_id',auth()->user()->id)
+                            ->where('materi_code', $slug)
+                            ->first();
+
         $questions = Question::orderBy('id','desc')
                                 ->where('quiz_id', $quiz->id)
                                 ->where('is_active',1)
@@ -53,9 +63,11 @@ class QuizzController extends Controller
         $jumlahQuiz = $countQuiz > 0 ? $countQuiz : 100;
         $nilaiPerSoal = $totalNilai / $jumlahQuiz ;
         $nilaiYour = $answerIsRight * $nilaiPerSoal;
-        $isRepeat = $nilaiYour >70 ? false : true;
+        $isRepeat = $nilaiYour >=70 ? false : true;
         return view('frontend.siswa.quiz', [
             'quiz' => $quiz,
+            'open' => $open,
+            'takequiz' => $takequiz,
             'questions'=>$questions,
             'nilai' => $nilaiYour,
             'is_answer' => $isAnswer>0 ? true : false,
