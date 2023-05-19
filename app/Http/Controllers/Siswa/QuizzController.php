@@ -64,6 +64,63 @@ class QuizzController extends Controller
         $nilaiPerSoal = $totalNilai / $jumlahQuiz ;
         $nilaiYour = $answerIsRight * $nilaiPerSoal;
         $isRepeat = $nilaiYour >=70 ? false : true;
+        
+
+        if ($slug == "bab-1") {
+            $o = OpenMateri::where('user_id',auth()->user()->id)
+                            ->where('materi_code','pengurangandesimal')
+                            ->first();
+            $n = $o->status;
+                            
+        }elseif ($slug == "bab-2") {
+            $o = OpenMateri::where('user_id',auth()->user()->id)
+                            ->where('materi_code','pembagiandesimal')
+                            ->first();
+            $n = $o->status;
+        }elseif ($slug == "evaluasi-akhir") {
+            $o = OpenMateri::where('user_id',auth()->user()->id)
+            ->where('materi_code','bab-2')
+            ->first();
+
+            $questions2 = Question::orderBy('id','desc')
+                                ->where('quiz_id', 2)
+                                ->where('is_active',1)
+                                ->get();
+
+            $countQuiz2 = $questions2->count();
+
+            $answerIsRight2 = UserQuestionAnswer::leftJoin('questions', function($join) {
+                            $join->on('user_question_answer.question_id', '=', 'questions.id');
+                        })
+                        ->where('email',auth()->user()->email)
+                        ->where('questions.quiz_id',2)
+                        ->where('is_right',1)
+                        ->get()
+                        ->count();
+
+            $isAnswer2= UserQuestionAnswer::leftJoin('questions', function($join) {
+                            $join->on('user_question_answer.question_id', '=', 'questions.id');
+                        })
+                        ->where('email',auth()->user()->email)
+                        ->where('questions.quiz_id',2)
+                        ->get()
+                        ->count();
+            $totalNilai2 = 100;
+            $jumlahQuiz2 = $countQuiz2 > 0 ? $countQuiz2 : 100;
+            $nilaiPerSoal2 = $totalNilai2 / $jumlahQuiz2 ;
+            $nilaiYour2 = $answerIsRight2 * $nilaiPerSoal2;
+            $isRepeat2 = $nilaiYour2 >=70 ? false : true;
+
+
+            if ($o->status == 1 & $isRepeat2==0) {
+                $n = 1;
+            } else {
+                $n = 0;
+            }
+
+        }
+
+
         return view('frontend.siswa.quiz', [
             'quiz' => $quiz,
             'open' => $open,
@@ -71,7 +128,8 @@ class QuizzController extends Controller
             'questions'=>$questions,
             'nilai' => $nilaiYour,
             'is_answer' => $isAnswer>0 ? true : false,
-            'is_repeat' => $isRepeat
+            'is_repeat' => $isRepeat,
+            'n' => $n
         ]);
     }
 

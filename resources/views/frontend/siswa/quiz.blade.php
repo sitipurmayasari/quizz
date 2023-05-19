@@ -69,9 +69,10 @@
             <hr>
         @endforeach
         <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-            <input type="hidden" id="materi_code" name="materi_code" value="{{$quiz->slug}}">
-            <input type="hidden" id="status" name="status" value="{{$takequiz->status}}">
+            <input type="hidden" id="materi_code" name="materi_code" value="{{$quiz->slug}}"> 
+            <input type="hidden" id="status" name="status" value="{{$takequiz->status}}"> 
             <input type="hidden" id="last_materi" name="last_materi" value="{{$open->materi_code}}">
+            <input type="hidden" name="take" id="take" value="{{$n}}">
             @if ($is_repeat)
                 <button class="btn btn-primary border-success align-items-center btn-success" type="submit">
                     KIRIM JAWABAN<i class="fa fa-angle-right ml-2"></i>
@@ -90,12 +91,13 @@
         var status = $("#status").val();
         var now = $("#materi_code").val();
         var last = $("#last_materi").val();
+        var take = $("#take").val();
         if (status == '0') {
-            if (now == "bab-1" && last != "rangkuman_1") {
+            if (now == "bab-1" && take == 0) {
                 materi()
-            }else if (now == "bab-2" && last != "rangkuman_2" ){
+            }else if (now == "bab-2" &&  take == 0 ){
                 materi();
-            }else if (now == "evaluasi-akhir" && last != "bab-2"  ){
+            }else if (now == "evaluasi-akhir" && take == 0  ){
                 myFunction();
             }
         }

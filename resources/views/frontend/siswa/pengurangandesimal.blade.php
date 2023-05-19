@@ -312,21 +312,17 @@
       var e = $("#e").val();
      
       if (a == "5" && b == "0.2" && c == "1.45" && d == "1.25" && e == "1.25" ) {
-        $("#jawaban_benar").val(1);
-        lanjut()
-      } else {
-        $("#jawaban_benar").val(0);
-      }
-      
-    }
-
-    function lanjut(params) {
-      var benar = $("#jawaban_benar").val();
-      var status = $("#status").val();
-      if (benar == 1 && status==0) {
         $("#simpan").removeAttr("hidden");
         $("#lanjut").attr("hidden",true);
-      }
     }
+  }
+
+    // function lanjut(params) {
+    //   var benar = $("#jawaban_benar").val();
+    //   var status = $("#status").val();
+    //   if (benar == 1 && status==0) {
+        
+    //   }
+    // }
 </script>
 @endsection
