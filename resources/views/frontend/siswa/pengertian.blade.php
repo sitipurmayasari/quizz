@@ -46,88 +46,96 @@ Menentukan pecahan dengan gambar
   Operasi hitung pecahan dalam matematika terdiri dari penjumlahan, pengurangan, perkalian, dan pembagian. Cara melakukan operasi hitung pecahan pada penjumlahan dan pengurangan hanya bisa dilakukan apabila penyebutnya sama. Sedangkan pada operasi hitung pecahan perkalian dan pembagian dapat dilakukan pada bentuk pecahan biasa dengan penyebut yang sama maupun berbeda.
 </p>
 <br><br>
-<h4 class="mb-4">Ayo Mencoba!</h4>
+<h4 class="mb-4">Asyik Mencoba!</h4>
 <hr>
-<br>
 <p>
   Perhatikan gambar dibawah. Isilah titik-titik dan tentukan nilai pecahan sesuai gambar! <br>
   inputkan jawaban di dalam kolom. Jawaban benar akan berwarna biru, jika salah berwarna merah.
-</p>
-<table>
-  <tr>
-    <td style="width: 100px;"><img src="{{asset('images/materi/pengertian/empat.png')}}" alt="" style="width: 100px;"></td>
-    <td>
-      = 
-      &nbsp; &nbsp; &nbsp;
+  <table>
+    <tr>
+      <td style="width: 100px;">
+        <img src="{{asset('images/materi/pengertian/empat.png')}}" alt="" style="width: 100px;">
+      </td>
+      <td>
+        = &nbsp; &nbsp; &nbsp;
       <input type="number" name="a1" id="a1" value="" style="width: 40px;" onclick="satu()" onkeyup="satu()">
-    </td>
-    <td>
-      <span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
-      <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
-      <input type="hidden" id="jawaban_benar1" value="0">
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><img src="{{asset('images/materi/pengertian/lima.png')}}" alt="" style="width: 100px;"></td>
-    <td>
-      =
-      &nbsp; &nbsp; &nbsp;
-      <span class="frac"><sup>
-        <input type="number" name="a2" id="a2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
-      </sup><span>&frasl;</span><sub>
-        <input type="number" name="b2" id="b2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
-      </sub></span>
-    </td>
-    <td>
-      <span id="s2_benar" hidden class="badge badge-pill badge-success">Benar</span>
-      <span id="s2_salah" hidden class="badge badge-pill badge-danger">Salah</span>
-      <input type="hidden" id="jawaban_benar2" value="0">
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td style="text-align:center;"><img src="{{asset('images/materi/pengertian/enam.png')}}" alt="" style="width: 50px;"></td>
-    <td>
-      =
-      &nbsp; &nbsp; &nbsp;
-      <span class="frac"><sup>
-        <input type="number" name="a3" id="a3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
-      </sup><span>&frasl;</span><sub>
-        <input type="number" name="b3" id="b3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
-      </sub></span>
-    </td>
-    <td>
-      <span id="s3_benar" hidden class="badge badge-pill badge-success">Benar</span>
-      <span id="s3_salah" hidden class="badge badge-pill badge-danger">Salah</span>
-      <input type="hidden" id="jawaban_benar3" value="0">
-    </td>
-  </tr>
-</table>
+      </td>
+      <td>
+        <span id="s1_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s1_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+        <input type="hidden" id="jawaban_benar1" value="0">
+      </td>
+    </tr>
+    <tr>
+      <td style="width: 100px;">
+        <img src="{{asset('images/materi/pengertian/lima.png')}}" alt="" style="width: 100px;">
+      </td>
+      <td>
+        = &nbsp; &nbsp; &nbsp;
+        <span class="frac"><sup>
+          <input type="number" name="a2" id="a2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="b2" id="b2" value="" style="width: 40px;" onclick="dua()" onkeyup="dua()">
+        </sub></span>
+      </td>
+      <td>
+        <span id="s2_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s2_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+        <input type="hidden" id="jawaban_benar2" value="0">
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="width: 100px;text-align:center;">
+        <img src="{{asset('images/materi/pengertian/enam.png')}}" alt="" style="width: 50px;">
+      </td>
+      <td>
+        = &nbsp; &nbsp; &nbsp;
+        <span class="frac"><sup>
+          <input type="number" name="a3" id="a3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
+        </sup><span>&frasl;</span><sub>
+          <input type="number" name="b3" id="b3" value="" style="width: 40px;" onclick="tiga()" onkeyup="tiga()">
+        </sub></span>
+      </td>
+      <td>
+        <span id="s3_benar" hidden class="badge badge-pill badge-success">Benar</span>
+        <span id="s3_salah" hidden class="badge badge-pill badge-danger">Salah</span>
+        <input type="hidden" id="jawaban_benar3" value="0">
+      </td>
+    </tr>
+  </table>
 
-<br><br><br>
-<div class="hero_btn-continer" style="text-align: right;">
-  <a href="{{Route('siswa.materi',['q' => 'penjumlahanbiasa'])}}" class="call_to-btn btn_white-border"> 
-    <span>
-      Selanjutnya
-    </span>
-    <img src="{{asset('front/images/right-arrow.png')}}" alt="">
-  </a>
-</div>
-</div>
+  <br><br><br>
+  <div>
+    <div class="hero_btn-continer" style="text-align: right; float: right">
+      <form class="form-horizontal validate-form" role="form" method="post" action="{{route('siswa.store')}}">
+        {{ csrf_field() }}
+        <input type="hidden" id="status" name="status" value="{{$next ? $next->status : 0}}">
+        <input type="hidden" id="materi_code" name="materi_code" value="{{Request('q')}}">
+        <input type="hidden" id="nextmateri" name="nextmateri" value="{{$next ? $next->materi_code : 'penjumlahancampuran'}}">
+
+        <button type="submit" id="simpan" hidden class="call_to-btn btn_white-border">
+          Selanjutnya <img src="{{asset('front/images/right-arrow.png')}}" alt="">
+        </button>
+      </form>
+      <a id="lanjut" hidden href="{{Route('siswa.materi',['q' => 'penjumlahancampuran'])}}" class="call_to-btn btn_white-border">
+        <span>
+          Selanjutnya
+        </span>
+        <img src="{{asset('front/images/right-arrow.png')}}" alt="">
+      </a>
+    </div>
+  </div>
+
 @endsection
 
 @section('script')
 <script>
-  $().ready( function () {
+   $().ready( function () {
     var status = $("#status").val();
       if (status == 1) {
         $("#lanjut").removeAttr("hidden");
@@ -136,6 +144,7 @@ Menentukan pecahan dengan gambar
 
     function satu() {
       var a1 = $("#a1").val();
+
       if (a1 == 1) {
         $("#s1_benar").removeAttr("hidden");
         $("#s1_salah").attr("hidden",true);
@@ -151,7 +160,6 @@ Menentukan pecahan dengan gambar
     function dua() {
       var a2 = $("#a2").val();
       var b2 = $("#b2").val();
-
       if (a2 == 1 && b2 == 2) {
         $("#s2_benar").removeAttr("hidden");
         $("#s2_salah").attr("hidden",true);
@@ -167,15 +175,14 @@ Menentukan pecahan dengan gambar
     function tiga() {
       var a3 = $("#a3").val();
       var b3 = $("#b3").val();
-
       if (a3 == 1 && b3 == 4) {
         $("#s3_benar").removeAttr("hidden");
         $("#s3_salah").attr("hidden",true);
-        $("#jawaban_benar2").val(1);
+        $("#jawaban_benar3").val(1);
       } else {
         $("#s3_salah").removeAttr("hidden");
         $("#s3_benar").attr("hidden",true);
-        $("#jawaban_benar2").val(0);
+        $("#jawaban_benar3").val(0);
       }
       lanjut()
     }
@@ -190,6 +197,5 @@ Menentukan pecahan dengan gambar
         $("#lanjut").attr("hidden",true);
       }
     }
-    
 </script>
 @endsection

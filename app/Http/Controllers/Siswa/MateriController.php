@@ -22,7 +22,12 @@ class MateriController extends Controller
 
             $this->listing_materi();
 
-           return view('frontend.siswa.pengertian');
+            $next = OpenMateri::orderBy('id','asc')
+                              ->where('materi_code','penjumlahanbiasa')
+                              ->where('user_id',auth()->user()->id)
+                              ->first();
+
+           return view('frontend.siswa.pengertian',compact('next'));
 
         //penjumlahan biasa
         }else  if ($request->q=="penjumlahanbiasa") {
