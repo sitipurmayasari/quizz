@@ -1,7 +1,7 @@
 @extends('layouts.front-about')
 @section('content')
 <div class="container">
-    <h2 class="main-heading ">
+    <h2 class="main-heading" style="margin-top: -50px;">
       Tentang Pengembang
     </h2>
     <p class="text-center">
@@ -61,3 +61,4 @@
     </div>
   </div>
 @endsection
+

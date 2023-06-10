@@ -108,8 +108,29 @@ Menentukan pecahan dengan gambar
       </td>
     </tr>
   </table>
-
   <br><br><br>
+  {{--------------------------- Tambahan ----------------------}}
+  <div class="hero_btn-continer" style="text-align: left; float: left">
+    <button id="cek1" type="button" class="call_to-btn btn_white-border" onclick="cek1()" >
+      Cek Jawaban
+    </button>
+    <br>&nbsp;<br>
+    <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan1_benar" hidden>
+      <p>
+        <mark>Jawaban Kamu Benar!</mark> <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quibusdam perferendis voluptatum soluta maiores labore officiis cum molestiae molestias veniam expedita libero iure dolorem, provident quam nobis id amet aspernatur?
+      </p>
+    </div>
+    <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan1_salah" hidden>
+      <p>
+        <mark>Jawaban Kamu Masih Ada yang Salah!</mark> <br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quibusdam perferendis voluptatum soluta maiores labore officiis cum molestiae molestias veniam expedita libero iure dolorem, provident quam nobis id amet aspernatur?
+      </p>
+    </div>
+    <div></div>
+  </div>
+  <br> &nbsp;<br> &nbsp;<br>
+  {{--------------------------- Batas Tambahan ----------------------}}
   <div>
     <div class="hero_btn-continer" style="text-align: right; float: right">
       <form class="form-horizontal validate-form" role="form" method="post" action="{{route('siswa.store')}}">
@@ -154,7 +175,9 @@ Menentukan pecahan dengan gambar
         $("#s1_benar").attr("hidden",true);
         $("#jawaban_benar1").val(0);
       }
-      lanjut()
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function dua() {
@@ -169,7 +192,9 @@ Menentukan pecahan dengan gambar
         $("#s2_benar").attr("hidden",true);
         $("#jawaban_benar2").val(0);
       }
-      lanjut()
+    // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function tiga() {
@@ -184,18 +209,47 @@ Menentukan pecahan dengan gambar
         $("#s3_benar").attr("hidden",true);
         $("#jawaban_benar3").val(0);
       }
-      lanjut()
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+      // --------------------------- Batas Perubahan ----------------------
     }
 
-    function lanjut(params) {
+
+    // --------------------------- Tambahan ----------------------
+    function cek1(){
       var satu = $("#jawaban_benar1").val();
       var dua = $("#jawaban_benar2").val();
       var tiga = $("#jawaban_benar3").val();
 
       if (satu == 1 && dua == 1 && tiga == 1 ) {
-        $("#simpan").removeAttr("hidden");
-        $("#lanjut").attr("hidden",true);
+        $("#bahasan1_benar").removeAttr("hidden");
+        $("#bahasan1_salah").attr("hidden",true);
+        lanjut()
+      }else{
+        $("#bahasan1_salah").removeAttr("hidden");
+        $("#bahasan1_benar").attr("hidden",true);
       }
     }
+    
+    function lanjut(params) {
+        $("#simpan").removeAttr("hidden");
+        $("#lanjut").attr("hidden",true);
+    }
+
+    // --------------------------- batas Tambahan ----------------------
+
+// --------------------------- Perubahan ----------------------
+ // function lanjut(params) {
+    //   var satu = $("#jawaban_benar1").val();
+    //   var dua = $("#jawaban_benar2").val();
+    //   var tiga = $("#jawaban_benar3").val();
+
+    //   if (satu == 1 && dua == 1 && tiga == 1 ) {
+    //     $("#simpan").removeAttr("hidden");
+    //     $("#lanjut").attr("hidden",true);
+    //   }
+    // }
+  // --------------------------- Batas Perubahan ----------------------
+
 </script>
 @endsection

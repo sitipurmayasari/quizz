@@ -100,6 +100,29 @@
     </td>
   </tr>
 </table>
+ {{--------------------------- Tambahan ----------------------}}
+ <br>
+ <div class="hero_btn-continer" style="text-align: left; float: left">
+  <button id="cek1" type="button" class="call_to-btn btn_white-border" onclick="cek1()" >
+    Cek Jawaban
+  </button>
+  <br>&nbsp;<br>
+  <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan1_benar" hidden>
+    <p>
+      <mark>Jawaban Kamu Benar!</mark> <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quibusdam perferendis voluptatum soluta maiores labore officiis cum molestiae molestias veniam expedita libero iure dolorem, provident quam nobis id amet aspernatur?
+    </p>
+  </div>
+  <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan1_salah" hidden>
+    <p>
+      <mark>Jawaban Kamu Masih Ada yang Salah!</mark> <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quibusdam perferendis voluptatum soluta maiores labore officiis cum molestiae molestias veniam expedita libero iure dolorem, provident quam nobis id amet aspernatur?
+    </p>
+  </div>
+  <div></div>
+</div>
+<br> &nbsp;<br> &nbsp;<br>
+{{--------------------------- Batas Tambahan ----------------------}}
 <br>
 <p>
   Contoh:
@@ -216,7 +239,29 @@
     </td>
   </tr>
 </table>
-
+{{--------------------------- Tambahan ----------------------}}
+<br>
+<div class="hero_btn-continer" style="text-align: left; float: left">
+ <button id="cek2" type="button" class="call_to-btn btn_white-border" onclick="cek2()" >
+   Cek Jawaban
+ </button>
+ <br>&nbsp;<br>
+ <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan2_benar" hidden>
+   <p>
+     <mark>Jawaban Kamu Benar!</mark> <br>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quibusdam perferendis voluptatum soluta maiores labore officiis cum molestiae molestias veniam expedita libero iure dolorem, provident quam nobis id amet aspernatur?
+   </p>
+ </div>
+ <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan2_salah" hidden>
+   <p>
+     <mark>Jawaban Kamu Masih Ada yang Salah!</mark> <br>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quibusdam perferendis voluptatum soluta maiores labore officiis cum molestiae molestias veniam expedita libero iure dolorem, provident quam nobis id amet aspernatur?
+   </p>
+ </div>
+ <div></div>
+</div>
+<br> &nbsp;<br>
+{{--------------------------- Batas Tambahan ----------------------}}
   <br><br><br>
   <div>
     <div class="hero_btn-continer" style="text-align: left; float: left">
@@ -272,7 +317,9 @@
         $("#g1_benar").attr("hidden",true);
         $("#jawaban_gambar1").val(0);
       }
-      lanjut()
+     // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function gambar2() {
@@ -289,7 +336,9 @@
         $("#g2_benar").attr("hidden",true);
         $("#jawaban_gambar2").val(0);
       }
-      lanjut()
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function gambar3() {
@@ -306,7 +355,9 @@
         $("#g3_benar").attr("hidden",true);
         $("#jawaban_gambar3").val(0);
       }
-      lanjut()
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function satu() {
@@ -325,7 +376,9 @@
         $("#s1_benar").attr("hidden",true);
         $("#jawaban_benar1").val(0);
       }
-      lanjut()
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function dua() {
@@ -346,7 +399,9 @@
         $("#s2_benar").attr("hidden",true);
         $("#jawaban_benar2").val(0);
       }
-      lanjut()
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
     }
 
     function tiga() {
@@ -369,9 +424,45 @@
         $("#s3_benar").attr("hidden",true);
         $("#jawaban_benar3").val(0);
       }
+      // --------------------------- Perubahan ----------------------
+      // lanjut()
+    // --------------------------- Batas Perubahan ----------------------
+    }
+
+    // --------------------------- Tambahan ----------------------
+    function cek1(){
+      var gsatu = $("#jawaban_gambar1").val();
+      var gdua = $("#jawaban_gambar2").val();
+      var gtiga = $("#jawaban_gambar3").val();
+
+      if (gsatu == 1 && gdua == 1 && gtiga == 1 ) {
+        $("#bahasan1_benar").removeAttr("hidden");
+        $("#bahasan1_salah").attr("hidden",true);
+      }else{
+        $("#bahasan1_salah").removeAttr("hidden");
+        $("#bahasan1_benar").attr("hidden",true);
+      }
+
       lanjut()
     }
 
+    function cek2(){
+      var satu = $("#jawaban_benar1").val();
+      var dua = $("#jawaban_benar2").val();
+      var tiga = $("#jawaban_benar3").val();
+
+      if (satu == 1 && dua == 1 && tiga == 1 ) {
+        $("#bahasan2_benar").removeAttr("hidden");
+        $("#bahasan2_salah").attr("hidden",true);
+      }else{
+        $("#bahasan2_salah").removeAttr("hidden");
+        $("#bahasan2_benar").attr("hidden",true);
+      }
+      
+      lanjut()
+    }
+
+    // --------------------------- batas Tambahan ----------------------
 
     function lanjut(params) {
       var gsatu = $("#jawaban_gambar1").val();

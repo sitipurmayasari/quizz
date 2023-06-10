@@ -25,7 +25,7 @@
                             }
                             
                         @endphp
-                        <a href="{{$lanjut}}" class="call_to-btn btn_white-border">
+                        <a href="{{$lanjut}}" class="call_to-btn btn_white-border" id="lanjut">
                             <span>
                             Selanjutnya
                             </span>

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'LandingController@index')->name('home');
 Route::get('/logadmin', 'LandingController@logadmin')->name('logadmin');
 Route::get('/login', 'LandingController@login')->name('login');
-Route::post('/login/siswa', 'LandingController@verify_siswa')->name('login.siswa');
+Route::post('/login/siswa', 'LandingController@verify_siswa')->name('login.siswa'); // cari landing controller di ctrl + p
 Route::post('/login/guru', 'LandingController@verify_guru')->name('login.guru');
 
 Route::get('/curicullum', 'CurrController@index')->name('curicullum');
@@ -24,7 +24,8 @@ Auth::routes();
 // Route::get('quiz', 'QuizController@index')->name('quiz');
 // Route::get('quiz/accept/{slug}/{token}', 'QuizController@accept')->name('quiz.accept');
 // Route::post('quiz/accept/{slug}/{token}', 'QuizController@answer');
-Route::group([  
+
+Route::group([  // rute SISWA
     'middleware' => ['auth'],
     'namespace' => 'Siswa'], function()
 {
@@ -36,7 +37,7 @@ Route::group([
     Route::post('/siswa/quiz/accept/{slug}', 'QuizzController@answer');
 
     });
-    Route::group([  
+    Route::group([ // rute SISWA  
                     'middleware' => ['auth'],
                     'namespace' => 'Backend'], function()
     {

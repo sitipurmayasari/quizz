@@ -5,7 +5,7 @@
     <div class="hero-container container" style="padding: 0;">
         <div class="hero_detail-box">
           <div class="contact-form col-md-8">
-            <form method="POST" action="{{ route('login.siswa') }}">
+            <form method="POST" action="{{ route('login.siswa') }}"> {{-- mengetahui cek login dimana => buka web.php  --}}
                 @csrf
                 <div>
                 <input type="text" name="nisn"  class="@error('nisn') is-invalid @enderror"

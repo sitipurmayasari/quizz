@@ -36,11 +36,11 @@ class LandingController extends Controller
 
         $credentials = $request->only('nisn', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route('siswa.home')
+            return redirect()->route('siswa.home')  // berhasil login
                         ->withSuccess('Selamat Login Berhasil');
         }
   
-        return redirect("login")->withError('NISN / Password Tidak Valid');
+        return redirect("login")->withError('NISN / Password Tidak Valid'); //gagal login
 
     }
     public function verify_guru(Request $request)

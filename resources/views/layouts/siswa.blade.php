@@ -25,6 +25,18 @@
       }
       span.frac > sup {border-bottom: 0.03em solid;}
       span.frac > span {display: none;}
+
+      #lanjut{
+        background-color: hsl(84, 91%, 31%);
+      }
+
+      #simpan{
+        background-color: hsl(84, 91%, 31%);
+      }
+
+      #cek1, #cek2{
+        background-color: hsl(211, 74%, 63%);
+      }
     </style>
     @yield('css')
   </head>

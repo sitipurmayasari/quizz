@@ -511,7 +511,7 @@ class MateriController extends Controller
             //Rangkuman 2
             else  if ($request->q=="rangkuman_2") {
                $next = OpenMateri::orderBy('id','asc')
-                                ->where('materi_code','bab-1')
+                                ->where('materi_code','bab-2')
                                 ->where('user_id',auth()->user()->id)
                                 ->first();
 
