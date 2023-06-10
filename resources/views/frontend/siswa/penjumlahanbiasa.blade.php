@@ -343,7 +343,30 @@ yang penyebutnya berbeda, kita harus mengubahnya menjadi pecahan senilai yang me
       </td>
     </tr>
   </table>
+  <br>
+  <div class="hero_btn-continer" style="text-align: left; float: left">
+    <button id="cek1" type="button" class="call_to-btn btn_white-border" onclick="cek1()" >
+      Cek Jawaban
+    </button>
+    <br>&nbsp;<br>
+    <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan1_benar" hidden>
+      <p>
+        <mark>Jawaban Kamu <span style="background-color:Green">Benar! </span></mark> <br>
+        <u> Pembahasan : </u> <br> gambar satu menunjukkan hasil pecahan &nbsp; <span class="frac"><sup>11</sup><span>&frasl;</span><sub>12</sub></span> &nbsp; , gambar dua menunjukkan hasil pecahan &nbsp; <span class="frac"><sup>5</sup><span>&frasl;</span><sub>6</sub></span> &nbsp; , gambar tiga menunjukkan hasil pecahan &nbsp; <span class="frac"><sup>17</sup><span>&frasl;</span><sub>30</sub></span> &nbsp; ,
+        gambar empat menunjukkan hasil pecahan &nbsp; <span class="frac"><sup>7</sup><span>&frasl;</span><sub>8</sub></span> &nbsp; , gambar lima menunjukkan hasil pecahan &nbsp; <span class="frac"><sup>5</sup><span>&frasl;</span><sub>9</sub></span> &nbsp; . 
+      </p>
+    </div>
+    <div style="border: dashed 1px; text-align:center; padding:10px;" id="bahasan1_salah" hidden>
+      <p>
+      <mark> Jawaban Kamu Masih Ada yang <span style="background-color:Red">Salah! </span></mark> 
+        <ul> Pembahasan : <ul> 
+        Untuk dapat melanjutkan kemateri selanjutnya pastikan jawaban kamu benar semua maka tombol kehalaman selanjutnya akan muncul. Silahkan Ulangi Jawaban Kamu Yaa. 
+      </p>
 
+    </div>
+    <div></div>
+  </div>
+  <br> &nbsp;<br> 
   
   <br><br><br>
   <div>
@@ -407,7 +430,7 @@ yang penyebutnya berbeda, kita harus mengubahnya menjadi pecahan senilai yang me
         $("#s1_benar").attr("hidden",true);
         $("#jawaban_benar1").val(0);
       }
-      lanjut()
+      // lanjut()
     }
 
     function dua() {
@@ -431,7 +454,7 @@ yang penyebutnya berbeda, kita harus mengubahnya menjadi pecahan senilai yang me
         $("#s2_benar").attr("hidden",true);
         $("#jawaban_benar2").val(0);
       }
-      lanjut()
+      // lanjut()
     }
 
     function tiga() {
@@ -455,7 +478,7 @@ yang penyebutnya berbeda, kita harus mengubahnya menjadi pecahan senilai yang me
         $("#s3_benar").attr("hidden",true);
         $("#jawaban_benar3").val(0);
       }
-      lanjut()
+      // lanjut()
     }
 
     function empat() {
@@ -479,7 +502,7 @@ yang penyebutnya berbeda, kita harus mengubahnya menjadi pecahan senilai yang me
         $("#s4_benar").attr("hidden",true);
         $("#jawaban_benar4").val(0);
       }
-      lanjut()
+      // lanjut()
     }
 
     function lima() {
@@ -503,20 +526,41 @@ yang penyebutnya berbeda, kita harus mengubahnya menjadi pecahan senilai yang me
         $("#s5_benar").attr("hidden",true);
         $("#jawaban_benar5").val(0);
       }
-      lanjut()
+      // lanjut()
     }
-
-    function lanjut(params) {
+    function cek1(){
       var satu = $("#jawaban_benar1").val();
       var dua = $("#jawaban_benar2").val();
       var tiga = $("#jawaban_benar3").val();
       var empat = $("#jawaban_benar4").val();
       var lima = $("#jawaban_benar5").val();
 
-      if (satu == 1 && dua == 1 && tiga == 1 && empat == 1 && lima == 1 && status==0) {
-        $("#simpan").removeAttr("hidden");
-        $("#lanjut").attr("hidden",true);
+      if (satu == 1 && dua == 1 && tiga == 1 && empat == 1 && lima == 1) {
+        $("#bahasan1_benar").removeAttr("hidden");
+        $("#bahasan1_salah").attr("hidden",true);
+        lanjut()
+      }else{
+        $("#bahasan1_salah").removeAttr("hidden");
+        $("#bahasan1_benar").attr("hidden",true);
       }
     }
+    
+    function lanjut(params) {
+        $("#simpan").removeAttr("hidden");
+        $("#lanjut").attr("hidden",true);
+    }
+
+    // function lanjut(params) {
+    //   var satu = $("#jawaban_benar1").val();
+    //   var dua = $("#jawaban_benar2").val();
+    //   var tiga = $("#jawaban_benar3").val();
+    //   var empat = $("#jawaban_benar4").val();
+    //   var lima = $("#jawaban_benar5").val();
+
+    //   if (satu == 1 && dua == 1 && tiga == 1 && empat == 1 && lima == 1 && status==0) {
+    //     $("#simpan").removeAttr("hidden");
+    //     $("#lanjut").attr("hidden",true);
+    //   }
+    // }
 </script>
 @endsection
